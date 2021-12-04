@@ -1,0 +1,6 @@
+framework module Pods_UILayoutSnapKit {
+  umbrella header "Pods-UILayoutSnapKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
