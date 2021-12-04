@@ -323,9 +323,9 @@ extension SwipeImage: SwipeImageDelegate {
         //        present(piker, animated: true)
     }
 }
+
 extension SwipeImage: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 10, height: collectionView.frame.height / 1.58)
     }
-   
 }
