@@ -10,31 +10,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    //var images: [UIImage] = [
-    //        "image_1",
-    //        "image_2",
-    //        "image_3",
-    //        "image_4",
-    //       "image_5",
-    //        "image_6",
-    //        "image_7",
-    //         "image_8",
-    //       "image_9",
-    //       "image_10",
-    //        "image_11",
-    //       "image_12",
-    //       "image_13",
-    //       "image_14",
-    //        "image_15",
-    //       "image_16",
-    //        "image_17",
-    //        "image_18",
-    //       "image_19",
-    //       "image_20")!
-    //    ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
     }
 
@@ -51,7 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
 
 }
 
