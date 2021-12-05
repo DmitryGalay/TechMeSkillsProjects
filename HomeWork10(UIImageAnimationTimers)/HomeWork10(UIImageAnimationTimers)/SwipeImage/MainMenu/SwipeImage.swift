@@ -36,7 +36,7 @@ class SwipeImage: UIViewController , UIImagePickerControllerDelegate & UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(NSHomeDirectory())
+        //print(NSHomeDirectory())
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         collectionView.dataSource = self
@@ -112,7 +112,7 @@ class SwipeImage: UIViewController , UIImagePickerControllerDelegate & UINavigat
             try data.write(to: path!.appendingPathComponent(name))
             return true
         } catch {
-            print(error.localizedDescription)
+            //print(error.localizedDescription)
             return false
         }
     }
@@ -228,8 +228,8 @@ class SwipeImage: UIViewController , UIImagePickerControllerDelegate & UINavigat
         }
     
         func rightAnimate() {
-            print(images.count)
-            print(imageVIP.count)
+//            print(images.count)
+//            print(imageVIP.count)
         }
 
         func createSwipe() {

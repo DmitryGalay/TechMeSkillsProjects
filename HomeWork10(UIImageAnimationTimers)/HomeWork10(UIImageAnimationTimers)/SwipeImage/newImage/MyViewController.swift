@@ -74,7 +74,7 @@ class MyViewController: UIViewController,UICollectionViewDelegate,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         addToDefaults()
         let imageNew = images[indexPath.item]
-        print(indexPath.item)
+       // print(indexPath.item)
         let imageView = UIImageView(image: imageNew)
         imageView.frame = self.view.frame
         imageView.backgroundColor = .black

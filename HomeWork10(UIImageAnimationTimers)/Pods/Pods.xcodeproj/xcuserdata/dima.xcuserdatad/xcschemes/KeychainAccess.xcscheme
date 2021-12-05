@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "253984FCFA1AAD40AE79BF83C7DE75D6"
-               BuildableName = "Pods_HomeWork10_UIImageAnimationTimers_.framework"
-               BlueprintName = "Pods-HomeWork10(UIImageAnimationTimers)"
+               BlueprintIdentifier = "615C831BCE925ED486B225B87E44926D"
+               BuildableName = "KeychainAccess.framework"
+               BlueprintName = "KeychainAccess"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

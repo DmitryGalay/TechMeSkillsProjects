@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 struct UserForm : Codable{
     var email: String
@@ -40,6 +41,7 @@ class RegisterViewController: UIViewController {
     private let minLength = 6
     private let password = "а132$А132"
     private lazy var regex = "^(?=.*[а-я])(?=.*[А-Я])(?=.*\\d)(?=.*[$@$!%*?&#])[А-Яа-я\\d$@$!%*?&#]{\(minLength),}$"
+    let storage: KeyValueStorage = ProtectedStorage()
     override func viewDidLoad() {
         super.viewDidLoad()
         registerPasswordTextField.delegate = self
@@ -92,16 +94,15 @@ class RegisterViewController: UIViewController {
             defaults.set(data, forKey: registerEmailTextfield.text!)
         }
     }
-    
-    func readFromDefaults() {
-        let defaults = UserDefaults.standard
-        if let userData = defaults.value(forKey: registerEmailTextfield.text!) as? Data {
-            let decoder = JSONDecoder()
-            let user = try? decoder.decode(UserForm.self, from: userData)
-            
-        }
-    }
-    
+//
+//    func readFromDefaults() {
+//        let defaults = UserDefaults.standard
+//        if let userData = defaults.value(forKey: registerEmailTextfield.text!) as? Data {
+//            let decoder = JSONDecoder()
+//            let user = try? decoder.decode(UserForm.self, from: userData)
+//
+//        }
+//    }
     
     func alertEmailMessage(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -130,8 +131,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func creatAccountButton(_ sender: UIButton) {
-        addToDefaults()
-        readFromDefaults()
+        storage.setValueString(key: registerEmailTextfield.text!, value: registerPasswordTextField.text!)
         alertSaveMessage(message: "")
     }
     

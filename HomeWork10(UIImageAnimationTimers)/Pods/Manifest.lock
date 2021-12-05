@@ -1,16 +1,20 @@
 PODS:
   - Gemini (1.4.0)
+  - KeychainAccess (4.2.2)
 
 DEPENDENCIES:
   - Gemini
+  - KeychainAccess
 
 SPEC REPOS:
   trunk:
     - Gemini
+    - KeychainAccess
 
 SPEC CHECKSUMS:
   Gemini: 4ad915cca8805577fe3021e02feeca2b77dcdbfc
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
 
-PODFILE CHECKSUM: d1377074633deb95a03353055db3778274fcffea
+PODFILE CHECKSUM: 82379397d2e18aad3b39c85f57109fcd94b75215
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

@@ -73,7 +73,7 @@ class CommentViewController: UIViewController {
             alert.exit.addShadow()
             alert.exit.addGradient()
             alert.comments.resignFirstResponder()
-            print(arrayComment.count)
+            //print(arrayComment.count)
         }
         
         @objc func exitPressed() {

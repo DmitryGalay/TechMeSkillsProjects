@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import KeychainAccess
+
 struct Keys {
     static let userKey = "kUser"
     
@@ -29,13 +31,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate , UIImagePickerC
     var gameDelegate: SwipeImageDelegate?
     var isFiledName: Bool = false
     var isFiledPassword: Bool = false
+    let storage: KeyValueStorage = ProtectedStorage()
     
     override func viewDidLayoutSubviews() {
         mainImageView.layer.cornerRadius = mainImageView.layer.bounds.width/2
         mainImageView.clipsToBounds = true
         
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +92,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate , UIImagePickerC
     }
     
     @objc func userCheck(textField: UITextField) {
-        let defaults = UserDefaults.standard
-        if let userData = defaults.value(forKey: userNameTextField.text!) as? Data {
-            let decoder = JSONDecoder()
-            let user = try? decoder.decode(UserForm.self, from: userData)
-            if user!.email == userNameTextField.text {
+        let keychain = Keychain().accessibility(.afterFirstUnlock)
+        let userKeychain = keychain.allKeys()
+        for value in userKeychain {
+            if value == userNameTextField.text {
                 loginStack.addBottomBorderWithColor(color: .green, width: 3)
                 print("Yes")
                 isFiledName = true
@@ -105,11 +106,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate , UIImagePickerC
     }
     
     @objc func passwordCheck(textField: UITextField) {
-        let defaults = UserDefaults.standard
-        if let userData = defaults.value(forKey: userNameTextField.text!) as? Data {
-            let decoder = JSONDecoder()
-            let user = try? decoder.decode(UserForm.self, from: userData)
-            if user!.password == passwordTextField.text {
+//        let keychain = Keychain().accessibility(.afterFirstUnlock)
+//        let token = try? keychain.getString(userNameTextField.text!)
+        let token = storage.getValueString(key: userNameTextField.text!)
+            if token == passwordTextField.text {
                 passwordStack.addBottomBorderWithColor(color: .green, width: 3)
                 loginOutlet.isEnabled = true
                 print("Yes")
@@ -118,7 +118,37 @@ class LoginViewController: UIViewController,UITextFieldDelegate , UIImagePickerC
                 print("No")
             }
         }
-    }
+    
+//    @objc func userCheckUserDefault(textField: UITextField) {
+//        let defaults = UserDefaults.standard
+//        if let userData = defaults.value(forKey: userNameTextField.text!) as? Data {
+//            let decoder = JSONDecoder()
+//            let user = try? decoder.decode(UserForm.self, from: userData)
+//            if user!.email == userNameTextField.text {
+//                loginStack.addBottomBorderWithColor(color: .green, width: 3)
+//                print("Yes")
+//                isFiledName = true
+//            }else {
+//                print("No")
+//            }
+//        }
+//    }
+    
+//    @objc func passwordCheckUserDefault(textField: UITextField) {
+//        let defaults = UserDefaults.standard
+//        if let userData = defaults.value(forKey: userNameTextField.text!) as? Data {
+//            let decoder = JSONDecoder()
+//            let user = try? decoder.decode(UserForm.self, from: userData)
+//            if user!.password == passwordTextField.text {
+//                passwordStack.addBottomBorderWithColor(color: .green, width: 3)
+//                loginOutlet.isEnabled = true
+//                print("Yes")
+//                isFiledPassword = true
+//            }else {
+//                print("No")
+//            }
+//        }
+//    }
     
     func checkValueButton() {
         if isFiledName && isFiledPassword {

@@ -8,5 +8,6 @@ target 'HomeWork10(UIImageAnimationTimers)' do
   # Pods for HomeWork10(UIImageAnimationTimers)
 
 	pod 'Gemini'
+	pod 'KeychainAccess'
 
 end
