@@ -124,6 +124,17 @@
 			path = KeychainAcees;
 			sourceTree = "<group>";
 		};
+		32057BA2275D19890062811A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				323DD26727397409000E6618 /* Options.swift */,
+				321832F32717117800BD6C5C /* Fonts */,
+				321832A627142DB300BD6C5C /* Extension */,
+				32057B9F275D0D480062811A /* KeychainAcees */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		321832A627142DB300BD6C5C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +201,6 @@
 			children = (
 				3255B0732702FFFC00661182 /* AppDelegate.swift */,
 				3255B0752702FFFC00661182 /* SceneDelegate.swift */,
-				323DD26727397409000E6618 /* Options.swift */,
-				32057B9F275D0D480062811A /* KeychainAcees */,
 				3255B08E2705E19B00661182 /* MainViewController.swift */,
 				32E9BBB3272934390080193E /* SwipeImage */,
 				3255B0772702FFFC00661182 /* RunBall.swift */,
@@ -200,8 +209,7 @@
 				3255B07C2703000100661182 /* Assets.xcassets */,
 				3255B07E2703000100661182 /* LaunchScreen.storyboard */,
 				3255B0812703000100661182 /* Info.plist */,
-				321832A627142DB300BD6C5C /* Extension */,
-				321832F32717117800BD6C5C /* Fonts */,
+				32057BA2275D19890062811A /* Settings */,
 			);
 			path = "HomeWork10(UIImageAnimationTimers)";
 			sourceTree = "<group>";
