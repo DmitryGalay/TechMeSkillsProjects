@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1310"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3255B06F2702FFFC00661182"
-               BuildableName = "HomeWork10(UIImageAnimationTimers).app"
-               BlueprintName = "HomeWork10(UIImageAnimationTimers)"
-               ReferencedContainer = "container:HomeWork10(UIImageAnimationTimers).xcodeproj">
+               BlueprintIdentifier = "CEC000C1F603F1164EA37BEA39D3EEBE"
+               BuildableName = "Pods_SwipeImage.framework"
+               BlueprintName = "Pods-SwipeImage"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3255B06F2702FFFC00661182"
-            BuildableName = "HomeWork10(UIImageAnimationTimers).app"
-            BlueprintName = "HomeWork10(UIImageAnimationTimers)"
-            ReferencedContainer = "container:HomeWork10(UIImageAnimationTimers).xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3255B06F2702FFFC00661182"
-            BuildableName = "HomeWork10(UIImageAnimationTimers).app"
-            BlueprintName = "HomeWork10(UIImageAnimationTimers)"
-            ReferencedContainer = "container:HomeWork10(UIImageAnimationTimers).xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

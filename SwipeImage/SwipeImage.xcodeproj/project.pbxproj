@@ -45,11 +45,13 @@
 		32EBB8EE273E8BD200BF4F60 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB8ED273E8BD200BF4F60 /* CommentViewController.swift */; };
 		32EBB8F3273F194600BF4F60 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB8F1273F194600BF4F60 /* TableViewCell.swift */; };
 		32EBB8F4273F194600BF4F60 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32EBB8F2273F194600BF4F60 /* TableViewCell.xib */; };
-		DEA8BFB072CE042BEE027196 /* Pods_HomeWork10_UIImageAnimationTimers_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1457A67A7BF204611EE5EA /* Pods_HomeWork10_UIImageAnimationTimers_.framework */; };
+		47CD1BBAD1C4C29506598A8F /* Pods_SwipeImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30589F21779AE9FD860C8B23 /* Pods_SwipeImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1ECE20F0898C155F638B0872 /* Pods-HomeWork10(UIImageAnimationTimers).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork10(UIImageAnimationTimers).release.xcconfig"; path = "Target Support Files/Pods-HomeWork10(UIImageAnimationTimers)/Pods-HomeWork10(UIImageAnimationTimers).release.xcconfig"; sourceTree = "<group>"; };
+		23B900E46D2436565E2BF061 /* Pods-SwipeImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeImage.debug.xcconfig"; path = "Target Support Files/Pods-SwipeImage/Pods-SwipeImage.debug.xcconfig"; sourceTree = "<group>"; };
+		30589F21779AE9FD860C8B23 /* Pods_SwipeImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32057B9D275D0D420062811A /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		32057BA0275D0D7E0062811A /* ProtectedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedStorage.swift; sourceTree = "<group>"; };
 		321832A727142E5B00BD6C5C /* ExtansionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtansionButton.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		323DD265273926FB000E6618 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		323DD26727397409000E6618 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		3254237E2709EBFF0044B032 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		3255B0702702FFFC00661182 /* HomeWork10(UIImageAnimationTimers).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork10(UIImageAnimationTimers).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3255B0702702FFFC00661182 /* SwipeImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3255B0732702FFFC00661182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3255B0752702FFFC00661182 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3255B0772702FFFC00661182 /* RunBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBall.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 		32EBB8F1273F194600BF4F60 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		32EBB8F2273F194600BF4F60 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		590B83DAE4E92D61A45D0A5E /* Pods-HomeWork10(UIImageAnimationTimers).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork10(UIImageAnimationTimers).debug.xcconfig"; path = "Target Support Files/Pods-HomeWork10(UIImageAnimationTimers)/Pods-HomeWork10(UIImageAnimationTimers).debug.xcconfig"; sourceTree = "<group>"; };
-		6A1457A67A7BF204611EE5EA /* Pods_HomeWork10_UIImageAnimationTimers_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork10_UIImageAnimationTimers_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB62067CCEC1B8FEFA964960 /* Pods-SwipeImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeImage.release.xcconfig"; path = "Target Support Files/Pods-SwipeImage/Pods-SwipeImage.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA8BFB072CE042BEE027196 /* Pods_HomeWork10_UIImageAnimationTimers_.framework in Frameworks */,
+				47CD1BBAD1C4C29506598A8F /* Pods_SwipeImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +113,8 @@
 			children = (
 				590B83DAE4E92D61A45D0A5E /* Pods-HomeWork10(UIImageAnimationTimers).debug.xcconfig */,
 				1ECE20F0898C155F638B0872 /* Pods-HomeWork10(UIImageAnimationTimers).release.xcconfig */,
+				23B900E46D2436565E2BF061 /* Pods-SwipeImage.debug.xcconfig */,
+				DB62067CCEC1B8FEFA964960 /* Pods-SwipeImage.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -181,7 +185,7 @@
 		3255B0672702FFFC00661182 = {
 			isa = PBXGroup;
 			children = (
-				3255B0722702FFFC00661182 /* HomeWork10(UIImageAnimationTimers) */,
+				3255B0722702FFFC00661182 /* SwipeImage */,
 				3255B0712702FFFC00661182 /* Products */,
 				05B3BCBA017F1257DCD87195 /* Pods */,
 				AB7827C47E97564759AEDAD0 /* Frameworks */,
@@ -191,12 +195,12 @@
 		3255B0712702FFFC00661182 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3255B0702702FFFC00661182 /* HomeWork10(UIImageAnimationTimers).app */,
+				3255B0702702FFFC00661182 /* SwipeImage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3255B0722702FFFC00661182 /* HomeWork10(UIImageAnimationTimers) */ = {
+		3255B0722702FFFC00661182 /* SwipeImage */ = {
 			isa = PBXGroup;
 			children = (
 				3255B0732702FFFC00661182 /* AppDelegate.swift */,
@@ -211,7 +215,7 @@
 				3255B0812703000100661182 /* Info.plist */,
 				32057BA2275D19890062811A /* Settings */,
 			);
-			path = "HomeWork10(UIImageAnimationTimers)";
+			path = SwipeImage;
 			sourceTree = "<group>";
 		};
 		3255B0922706CDD600661182 /* CarGame */ = {
@@ -294,7 +298,7 @@
 		AB7827C47E97564759AEDAD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A1457A67A7BF204611EE5EA /* Pods_HomeWork10_UIImageAnimationTimers_.framework */,
+				30589F21779AE9FD860C8B23 /* Pods_SwipeImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3255B06F2702FFFC00661182 /* HomeWork10(UIImageAnimationTimers) */ = {
+		3255B06F2702FFFC00661182 /* SwipeImage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3255B0842703000100661182 /* Build configuration list for PBXNativeTarget "HomeWork10(UIImageAnimationTimers)" */;
+			buildConfigurationList = 3255B0842703000100661182 /* Build configuration list for PBXNativeTarget "SwipeImage" */;
 			buildPhases = (
 				10BD3568106821A2D51BF46A /* [CP] Check Pods Manifest.lock */,
 				3255B06C2702FFFC00661182 /* Sources */,
@@ -316,9 +320,9 @@
 			);
 			dependencies = (
 			);
-			name = "HomeWork10(UIImageAnimationTimers)";
+			name = SwipeImage;
 			productName = "HomeWork10(UIImageAnimationTimers)";
-			productReference = 3255B0702702FFFC00661182 /* HomeWork10(UIImageAnimationTimers).app */;
+			productReference = 3255B0702702FFFC00661182 /* SwipeImage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +339,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3255B06B2702FFFC00661182 /* Build configuration list for PBXProject "HomeWork10(UIImageAnimationTimers)" */;
+			buildConfigurationList = 3255B06B2702FFFC00661182 /* Build configuration list for PBXProject "SwipeImage" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -348,7 +352,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3255B06F2702FFFC00661182 /* HomeWork10(UIImageAnimationTimers) */,
+				3255B06F2702FFFC00661182 /* SwipeImage */,
 			);
 		};
 /* End PBXProject section */
@@ -387,7 +391,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HomeWork10(UIImageAnimationTimers)-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SwipeImage-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -400,15 +404,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HomeWork10(UIImageAnimationTimers)/Pods-HomeWork10(UIImageAnimationTimers)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SwipeImage/Pods-SwipeImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HomeWork10(UIImageAnimationTimers)/Pods-HomeWork10(UIImageAnimationTimers)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SwipeImage/Pods-SwipeImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWork10(UIImageAnimationTimers)/Pods-HomeWork10(UIImageAnimationTimers)-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwipeImage/Pods-SwipeImage-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -599,12 +603,12 @@
 		};
 		3255B0852703000100661182 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 590B83DAE4E92D61A45D0A5E /* Pods-HomeWork10(UIImageAnimationTimers).debug.xcconfig */;
+			baseConfigurationReference = 23B900E46D2436565E2BF061 /* Pods-SwipeImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "HomeWork10(UIImageAnimationTimers)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SwipeImage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,12 +622,12 @@
 		};
 		3255B0862703000100661182 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ECE20F0898C155F638B0872 /* Pods-HomeWork10(UIImageAnimationTimers).release.xcconfig */;
+			baseConfigurationReference = DB62067CCEC1B8FEFA964960 /* Pods-SwipeImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "HomeWork10(UIImageAnimationTimers)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SwipeImage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,7 +642,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3255B06B2702FFFC00661182 /* Build configuration list for PBXProject "HomeWork10(UIImageAnimationTimers)" */ = {
+		3255B06B2702FFFC00661182 /* Build configuration list for PBXProject "SwipeImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3255B0822703000100661182 /* Debug */,
@@ -647,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3255B0842703000100661182 /* Build configuration list for PBXNativeTarget "HomeWork10(UIImageAnimationTimers)" */ = {
+		3255B0842703000100661182 /* Build configuration list for PBXNativeTarget "SwipeImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3255B0852703000100661182 /* Debug */,

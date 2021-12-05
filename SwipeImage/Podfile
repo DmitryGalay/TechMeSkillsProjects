@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
-target 'HomeWork10(UIImageAnimationTimers)' do
+target 'SwipeImage' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for HomeWork10(UIImageAnimationTimers)
+  # Pods for SwipeImage
 
 	pod 'Gemini'
 	pod 'KeychainAccess'

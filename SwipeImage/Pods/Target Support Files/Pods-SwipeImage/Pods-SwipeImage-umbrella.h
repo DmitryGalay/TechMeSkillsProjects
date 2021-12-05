@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_HomeWork10_UIImageAnimationTimers_VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_HomeWork10_UIImageAnimationTimers_VersionString[];
+FOUNDATION_EXPORT double Pods_SwipeImageVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SwipeImageVersionString[];
 
