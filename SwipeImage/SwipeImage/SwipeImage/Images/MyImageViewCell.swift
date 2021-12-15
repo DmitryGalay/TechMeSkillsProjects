@@ -13,9 +13,7 @@ class MyImageViewCell:
 //    GeminiCell {
     
     @IBOutlet weak var imageView: UIImageView!
-//    func setCell(imageName: String ) {
-//        imageView.image = UIImage(named: imageName)
-//    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.frame = contentView.bounds

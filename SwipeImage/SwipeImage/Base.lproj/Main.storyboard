@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OwD-6j-CT7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKK-9X-oHf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -14,7 +15,7 @@
         <!--Run Ball-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="RunBall" id="BYZ-38-t0r" customClass="RunBall" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RunBall" id="BYZ-38-t0r" customClass="RunBall" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +86,7 @@
         <!--Main View Controller-->
         <scene sceneID="Fvj-Xr-c7c">
             <objects>
-                <viewController id="OwD-6j-CT7" customClass="MainViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OwD-6j-CT7" customClass="MainViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mwp-w4-C4C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,12 +95,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-U5-zyU">
-                                <rect key="frame" x="107" y="298" width="200" height="310"/>
+                                <rect key="frame" x="82" y="268" width="250" height="370"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFv-Vx-P6A">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="90"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="9bA-D5-3ei"/>
+                                            <constraint firstAttribute="height" constant="90" id="9bA-D5-3ei"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
                                         <state key="normal" title="Run ball">
@@ -110,9 +111,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-R4-I3Q">
-                                        <rect key="frame" x="0.0" y="120" width="200" height="70"/>
+                                        <rect key="frame" x="0.0" y="140" width="250" height="90"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="IJR-DY-D5v"/>
+                                            <constraint firstAttribute="height" constant="90" id="IJR-DY-D5v"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="27"/>
                                         <state key="normal" title="Swipe image">
@@ -123,9 +124,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rk-lO-rhF">
-                                        <rect key="frame" x="0.0" y="240" width="200" height="70"/>
+                                        <rect key="frame" x="0.0" y="280" width="250" height="90"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="GI9-FX-NZ6"/>
+                                            <constraint firstAttribute="height" constant="90" id="GI9-FX-NZ6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="27"/>
                                         <state key="normal" title="Car">
@@ -139,8 +140,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VyI-R4-I3Q" firstAttribute="centerX" secondItem="8Zq-U5-zyU" secondAttribute="centerX" id="Qm3-du-CEy"/>
-                                    <constraint firstAttribute="width" constant="200" id="R1V-5l-2YR"/>
-                                    <constraint firstAttribute="height" constant="310" id="Z5C-D0-0Fn"/>
+                                    <constraint firstAttribute="width" constant="250" id="R1V-5l-2YR"/>
+                                    <constraint firstAttribute="height" constant="370" id="Z5C-D0-0Fn"/>
                                     <constraint firstItem="4Rk-lO-rhF" firstAttribute="centerX" secondItem="8Zq-U5-zyU" secondAttribute="centerX" id="hU2-3W-3gs"/>
                                     <constraint firstItem="BFv-Vx-P6A" firstAttribute="centerX" secondItem="8Zq-U5-zyU" secondAttribute="centerX" id="oTT-Fu-luN"/>
                                 </constraints>
@@ -174,7 +175,7 @@
         <!--Swipe Image-->
         <scene sceneID="FuQ-6i-X1u">
             <objects>
-                <viewController storyboardIdentifier="SwipeImage" id="LsV-wx-t3g" customClass="SwipeImage" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwipeImage" id="LsV-wx-t3g" customClass="SwipeImage" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vI9-pg-xZh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +193,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SwipeImageCell" id="Onj-zM-j6R" customClass="SwipeImageCell" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SwipeImageCell" id="Onj-zM-j6R" customClass="SwipeImageCell" customModule="SwipeImage" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="148" width="420" height="600"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZJN-2L-RDC">
@@ -246,10 +247,26 @@
             </objects>
             <point key="canvasLocation" x="2333" y="944"/>
         </scene>
+        <!--Contacts-->
+        <scene sceneID="TiU-FW-OGC">
+            <objects>
+                <viewController id="H1H-PW-3hV" customClass="ContactViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gQz-vP-hbz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XUi-5P-T8Q"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="gkZ-al-e4p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYt-2t-Qwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4521.739130434783" y="952.90178571428567"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="p5P-gf-olQ">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="Zvc-2o-sFk" customClass="GameViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="Zvc-2o-sFk" customClass="GameViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y4X-fr-UPi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +281,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="DaQ-zv-bad">
             <objects>
-                <viewController storyboardIdentifier="GameOverViewController" id="0tT-1m-Ceg" customClass="GameOverViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameOverViewController" id="0tT-1m-Ceg" customClass="GameOverViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fF-Ge-1RY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -320,7 +337,7 @@
         <!--My View Controller-->
         <scene sceneID="5Js-Yk-OtT">
             <objects>
-                <viewController storyboardIdentifier="MyViewController" id="BUy-7d-4kh" customClass="MyViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyViewController" id="BUy-7d-4kh" customClass="MyViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dQB-hG-MY2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +352,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="slb-hl-rMF" customClass="CollectionViewCell" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="slb-hl-rMF" customClass="CollectionViewCell" customModule="SwipeImage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148" width="423" height="600"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ckJ-Fm-jLn">
@@ -383,7 +400,7 @@
         <!--Login View Controller-->
         <scene sceneID="pAy-vK-VlQ">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="qoE-5C-lq5" customClass="LoginViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="qoE-5C-lq5" customClass="LoginViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bwA-HJ-aJM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,7 +640,7 @@
         <!--Register View Controller-->
         <scene sceneID="Rk1-xG-xVM">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="tnF-mI-hgl" customClass="RegisterViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="tnF-mI-hgl" customClass="RegisterViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vi9-va-9r1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -821,7 +838,7 @@
         <!--Photo View Controller-->
         <scene sceneID="dSn-Hp-A2e">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" id="v4R-pb-9o2" customClass="PhotoViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" id="v4R-pb-9o2" customClass="PhotoViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nld-Gb-a26">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -836,7 +853,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPhotoViewCell" id="4Bw-GY-Kux" customClass="MyPhotoViewCell" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPhotoViewCell" id="4Bw-GY-Kux" customClass="MyPhotoViewCell" customModule="SwipeImage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rsH-IV-Nzp">
@@ -882,7 +899,7 @@
         <!--Comment View Controller-->
         <scene sceneID="EjA-1p-oGk">
             <objects>
-                <viewController storyboardIdentifier="CommentViewController" id="c4W-wt-t1R" customClass="CommentViewController" customModule="HomeWork10_UIImageAnimationTimers_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentViewController" id="c4W-wt-t1R" customClass="CommentViewController" customModule="SwipeImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HLC-Xz-4Nc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -931,6 +948,24 @@
             </objects>
             <point key="canvasLocation" x="2332" y="62"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="51W-1A-OEd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uKK-9X-oHf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9k-4D-4GI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H1H-PW-3hV" kind="relationship" relationship="rootViewController" id="Jf1-Zn-iG9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg4-XZ-w5C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3611.594202898551" y="952.90178571428567"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Go" width="404.5" height="447"/>
@@ -956,6 +991,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

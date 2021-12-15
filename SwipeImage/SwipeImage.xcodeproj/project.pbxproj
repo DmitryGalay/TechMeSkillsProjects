@@ -13,6 +13,8 @@
 		321832F6271712A800BD6C5C /* Ephesis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 321832F5271712A800BD6C5C /* Ephesis-Regular.ttf */; };
 		321832F82717134000BD6C5C /* lunch-time-normal2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 321832FA2717134000BD6C5C /* lunch-time-normal2.ttf */; };
 		321832FB2717134900BD6C5C /* teddy-bear.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 321832F12717105B00BD6C5C /* teddy-bear.ttf */; };
+		321CFC732760C261004DD140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 321CFC752760C261004DD140 /* Localizable.strings */; };
+		321CFC7E2760E234004DD140 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CFC7D2760E234004DD140 /* ContactViewController.swift */; };
 		322ABAEC2738496C00CCBF78 /* ExtensionShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322ABAEB2738496C00CCBF78 /* ExtensionShake.swift */; };
 		322ABAF027386D8B00CCBF78 /* MyPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322ABAEE27386D8A00CCBF78 /* MyPhotoViewCell.swift */; };
 		322ABAF32738782700CCBF78 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322ABAF22738782700CCBF78 /* PhotoViewController.swift */; };
@@ -58,6 +60,13 @@
 		321832F12717105B00BD6C5C /* teddy-bear.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "teddy-bear.ttf"; sourceTree = "<group>"; };
 		321832F5271712A800BD6C5C /* Ephesis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ephesis-Regular.ttf"; sourceTree = "<group>"; };
 		321832F92717134000BD6C5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = "en.lproj/lunch-time-normal2.ttf"; sourceTree = "<group>"; };
+		321CFC742760C261004DD140 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		321CFC762760CE04004DD140 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		321CFC772760CE04004DD140 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		321CFC782760CE04004DD140 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = "ru.lproj/lunch-time-normal2.ttf"; sourceTree = "<group>"; };
+		321CFC792760CE04004DD140 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		321CFC7B2760CE98004DD140 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		321CFC7D2760E234004DD140 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		322ABAEB2738496C00CCBF78 /* ExtensionShake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionShake.swift; sourceTree = "<group>"; };
 		322ABAEE27386D8A00CCBF78 /* MyPhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoViewCell.swift; sourceTree = "<group>"; };
 		322ABAF22738782700CCBF78 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 				321832F32717117800BD6C5C /* Fonts */,
 				321832A627142DB300BD6C5C /* Extension */,
 				32057B9F275D0D480062811A /* KeychainAcees */,
+				321CFC752760C261004DD140 /* Localizable.strings */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -162,6 +172,14 @@
 				321832F12717105B00BD6C5C /* teddy-bear.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		321CFC70275E6963004DD140 /* RunBall */ = {
+			isa = PBXGroup;
+			children = (
+				3255B0772702FFFC00661182 /* RunBall.swift */,
+			);
+			path = RunBall;
 			sourceTree = "<group>";
 		};
 		322ABAF127386D9400CCBF78 /* АvatarPhoto */ = {
@@ -205,15 +223,16 @@
 			children = (
 				3255B0732702FFFC00661182 /* AppDelegate.swift */,
 				3255B0752702FFFC00661182 /* SceneDelegate.swift */,
+				321CFC7D2760E234004DD140 /* ContactViewController.swift */,
 				3255B08E2705E19B00661182 /* MainViewController.swift */,
+				32057BA2275D19890062811A /* Settings */,
 				32E9BBB3272934390080193E /* SwipeImage */,
-				3255B0772702FFFC00661182 /* RunBall.swift */,
+				321CFC70275E6963004DD140 /* RunBall */,
 				3255B0922706CDD600661182 /* CarGame */,
 				3255B0792702FFFC00661182 /* Main.storyboard */,
 				3255B07C2703000100661182 /* Assets.xcassets */,
 				3255B07E2703000100661182 /* LaunchScreen.storyboard */,
 				3255B0812703000100661182 /* Info.plist */,
-				32057BA2275D19890062811A /* Settings */,
 			);
 			path = SwipeImage;
 			sourceTree = "<group>";
@@ -346,6 +365,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 3255B0672702FFFC00661182;
 			productRefGroup = 3255B0712702FFFC00661182 /* Products */;
@@ -366,6 +386,7 @@
 				3255B0802703000100661182 /* LaunchScreen.storyboard in Resources */,
 				321832FB2717134900BD6C5C /* teddy-bear.ttf in Resources */,
 				3255B07D2703000100661182 /* Assets.xcassets in Resources */,
+				321CFC732760C261004DD140 /* Localizable.strings in Resources */,
 				3255B07B2702FFFC00661182 /* Main.storyboard in Resources */,
 				32EBB8F4273F194600BF4F60 /* TableViewCell.xib in Resources */,
 				321832F82717134000BD6C5C /* lunch-time-normal2.ttf in Resources */,
@@ -439,6 +460,7 @@
 				322ABAF32738782700CCBF78 /* PhotoViewController.swift in Sources */,
 				321832A827142E5B00BD6C5C /* ExtansionButton.swift in Sources */,
 				3255B0762702FFFC00661182 /* SceneDelegate.swift in Sources */,
+				321CFC7E2760E234004DD140 /* ContactViewController.swift in Sources */,
 				323DD26827397409000E6618 /* Options.swift in Sources */,
 				326E1E432726CEB4004E99B5 /* NIb.swift in Sources */,
 				3255B08F2705E19C00661182 /* MainViewController.swift in Sources */,
@@ -462,14 +484,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				321832F92717134000BD6C5C /* en */,
+				321CFC782760CE04004DD140 /* ru */,
 			);
 			name = "lunch-time-normal2.ttf";
+			sourceTree = "<group>";
+		};
+		321CFC752760C261004DD140 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				321CFC742760C261004DD140 /* en */,
+				321CFC792760CE04004DD140 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		3255B0792702FFFC00661182 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3255B07A2702FFFC00661182 /* Base */,
+				321CFC762760CE04004DD140 /* ru */,
+				321CFC7B2760CE98004DD140 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -478,6 +512,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3255B07F2703000100661182 /* Base */,
+				321CFC772760CE04004DD140 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -489,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -550,6 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

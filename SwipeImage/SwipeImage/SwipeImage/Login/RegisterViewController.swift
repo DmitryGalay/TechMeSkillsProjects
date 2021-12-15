@@ -94,15 +94,6 @@ class RegisterViewController: UIViewController {
             defaults.set(data, forKey: registerEmailTextfield.text!)
         }
     }
-//
-//    func readFromDefaults() {
-//        let defaults = UserDefaults.standard
-//        if let userData = defaults.value(forKey: registerEmailTextfield.text!) as? Data {
-//            let decoder = JSONDecoder()
-//            let user = try? decoder.decode(UserForm.self, from: userData)
-//
-//        }
-//    }
     
     func alertEmailMessage(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
