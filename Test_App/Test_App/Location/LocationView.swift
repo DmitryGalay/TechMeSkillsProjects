@@ -9,16 +9,12 @@ import Foundation
 import UIKit
 
 class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
+    let isValue = false
     @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var collectionView : UICollectionView!
     
     var images = [UIImage]()
-    
-    func add () {
-       
-    }
     
     func createLabel(text: String) {
         locationName.font = UIFont.systemFont(ofSize: 38)
@@ -52,8 +48,6 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
         override func awakeFromNib() {
             collectionView.dataSource = self
             collectionView.delegate = self
-//            collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
             let nibName = UINib(nibName: "CollectionViewCell", bundle:nil)
             collectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
     
@@ -62,11 +56,9 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-//        let image = images[indexPath.item]
-//
-//        cell.imageViewCell.image = image
-//        cell.imageViewCell.contentMode = .scaleAspectFill
-        cell.backgroundColor = .black
+        let image = images[indexPath.item]
+        cell.imageViewCell.image = image
+        cell.imageViewCell.contentMode = .scaleAspectFit
         cell.roundCorners(corners: [.topLeft,.topRight,.bottomRight,.bottomLeft], radius: 15)
         return cell
         
@@ -78,8 +70,8 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(
-            width: (collectionView.frame.width/3),
-            height: (collectionView.frame.width/3))
+            width: (collectionView.frame.width/3.2),
+            height: (collectionView.frame.width/3.2))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -88,12 +80,39 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+       
+       
+        let imageView = UIImageView(image: images[indexPath.item])
+        imageView.frame = collectionView.bounds
+        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .center
+        UIView.animate(withDuration: 3,animations: {
+            imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }, completion: { finished in
+          print("Napkins opened!")
+        })
+
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        imageView.addGestureRecognizer(tap)
+        collectionView.addSubview(imageView)
+        
+    }
+        @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+            sender.view?.removeFromSuperview()
+        
+        }
+  
+       
     
     
 }

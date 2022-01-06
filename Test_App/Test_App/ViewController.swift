@@ -68,6 +68,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     func setupView() {
         view1.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: view.frame.width , height: view.frame.height / 2.5 ))
