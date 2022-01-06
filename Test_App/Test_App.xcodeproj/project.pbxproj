@@ -20,6 +20,8 @@
 		3244240327870DB20014C580 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244240227870DB20014C580 /* ExtensionView.swift */; };
 		324424082787124E0014C580 /* ExtensionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324424072787124E0014C580 /* ExtensionLabel.swift */; };
 		3244240A278714E00014C580 /* ExtensionColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32442409278714DF0014C580 /* ExtensionColorLabel.swift */; };
+		3244240C278774B10014C580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3244240B278774B10014C580 /* GoogleService-Info.plist */; };
+		3244240E278788670014C580 /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244240D278788670014C580 /* ExtensionTextField.swift */; };
 		E1E4CDCDE1698FE8D12074ED /* Pods_Test_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63860B8AF3E886712099DB22 /* Pods_Test_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		3244240227870DB20014C580 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		324424072787124E0014C580 /* ExtensionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionLabel.swift; sourceTree = "<group>"; };
 		32442409278714DF0014C580 /* ExtensionColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColorLabel.swift; sourceTree = "<group>"; };
+		3244240B278774B10014C580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3244240D278788670014C580 /* ExtensionTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
 		63860B8AF3E886712099DB22 /* Pods_Test_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF467C1E6B53B5D578F8562A /* Pods-Test_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_App.release.xcconfig"; path = "Target Support Files/Pods-Test_App/Pods-Test_App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,7 @@
 		324423E42786E81A0014C580 /* Test_App */ = {
 			isa = PBXGroup;
 			children = (
+				3244240B278774B10014C580 /* GoogleService-Info.plist */,
 				324423E52786E81A0014C580 /* AppDelegate.swift */,
 				324423E72786E81A0014C580 /* SceneDelegate.swift */,
 				324423E92786E81A0014C580 /* ViewController.swift */,
@@ -104,6 +109,7 @@
 		3244240427870DB70014C580 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3244240D278788670014C580 /* ExtensionTextField.swift */,
 				32442409278714DF0014C580 /* ExtensionColorLabel.swift */,
 				324424072787124E0014C580 /* ExtensionLabel.swift */,
 				3244240227870DB20014C580 /* ExtensionView.swift */,
@@ -193,6 +199,7 @@
 				324423EF2786E81D0014C580 /* Assets.xcassets in Resources */,
 				324423ED2786E81A0014C580 /* Main.storyboard in Resources */,
 				324424012786FE7F0014C580 /* CollectionViewCell.xib in Resources */,
+				3244240C278774B10014C580 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +259,7 @@
 				324424082787124E0014C580 /* ExtensionLabel.swift in Sources */,
 				324423FA2786F1500014C580 /* LocationView.swift in Sources */,
 				324423E62786E81A0014C580 /* AppDelegate.swift in Sources */,
+				3244240E278788670014C580 /* ExtensionTextField.swift in Sources */,
 				324423E82786E81A0014C580 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +412,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test_App/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -413,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "test.Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -432,6 +441,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test_App/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -441,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "test.Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

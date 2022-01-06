@@ -7,31 +7,57 @@
 
 import Foundation
 import UIKit
+import FirebaseStorage
 
 class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    let isValue = false
-    @IBOutlet weak var locationName: UILabel!
+    
+    @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var collectionView : UICollectionView!
-    
+
     var images = [UIImage]()
+    private let storage = Storage.storage().reference()
     
-    func createLabel(text: String) {
-        locationName.font = UIFont.systemFont(ofSize: 38)
-        locationName.setText(text, withColorPart: "", color: .lightGray)
-        locationName.textColor = .lightGray
-        locationName.textAlignment = .left
+    func createLabel() {
+        locationName.settingTextField()
+        locationName.backgroundColor = .clear
+        locationName.placeholder = "Название локации"
+        locationName.tintColor = UIColor(named: "textFieldColor")
     }
     
     func createAddPhoto() {
-       
         addPhoto.setImage(UIImage(named:"add_btn"), for: .normal)
         addPhoto.tintColor = .black
         addPhoto.addTarget(self, action: #selector(addNewPhoto), for: .touchUpInside)
+        addPhoto.frame.size = CGSize(width: 10, height: 10)
     }
     
     @objc func addNewPhoto() {
-
+        for image in images {
+            guard let imageData = image.pngData() else {
+                return
+            }
+            guard let nameFile = locationName.text else {
+                return
+            }
+            storage.child("images/\(nameFile).png").putData(imageData,
+                                                                     metadata: nil,
+                                                                     completion: { [self]_, error in
+                guard error == nil else {
+                    print("Filed to upload")
+                    return
+                }
+                storage.child("images/file_\(images.count).png").downloadURL(completion: {url, error in
+                    guard let  url = url, error == nil else {
+                        return
+                    }
+                    let urlString = url.absoluteString
+                    print("Download URL: \(urlString)")
+                    UserDefaults.standard.set(urlString, forKey: "url")
+                })
+            })
+        }
+        
     }
     
     func createCollection() {
@@ -41,18 +67,19 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     func createImage() {
         for i in 1...6{
             let image = UIImage(named: "image_\(i)")!
+            
             images.append(image)
         }
     }
     
-        override func awakeFromNib() {
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            let nibName = UINib(nibName: "CollectionViewCell", bundle:nil)
-            collectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
-    
-    
-        }
+    override func awakeFromNib() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        let nibName = UINib(nibName: "CollectionViewCell", bundle:nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
+        
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
@@ -88,9 +115,6 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-       
-       
         let imageView = UIImageView(image: images[indexPath.item])
         imageView.frame = collectionView.bounds
         imageView.contentMode = .scaleToFill
@@ -98,21 +122,21 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
         UIView.animate(withDuration: 3,animations: {
             imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
         }, completion: { finished in
-          print("Napkins opened!")
+            print("Napkins opened!")
         })
-
+        
         imageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         imageView.addGestureRecognizer(tap)
         collectionView.addSubview(imageView)
         
     }
-        @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
-            sender.view?.removeFromSuperview()
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
         
-        }
-  
-       
+    }
+    
+    
     
     
 }
