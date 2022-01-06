@@ -100,8 +100,7 @@
 			children = (
 				324423F92786F1500014C580 /* LocationView.swift */,
 				324423FC2786F18D0014C580 /* LocationView.xib */,
-				324423FE2786F7E80014C580 /* CollectionViewCell.swift */,
-				324424002786FE7F0014C580 /* CollectionViewCell.xib */,
+				3244240F2787B6910014C580 /* Cell */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -115,6 +114,15 @@
 				3244240227870DB20014C580 /* ExtensionView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3244240F2787B6910014C580 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				324423FE2786F7E80014C580 /* CollectionViewCell.swift */,
+				324424002786FE7F0014C580 /* CollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3514AC07C0E1227A142BBC6C /* Pods */ = {

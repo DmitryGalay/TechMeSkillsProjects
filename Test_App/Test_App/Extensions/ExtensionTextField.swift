@@ -3,6 +3,7 @@
 //
 import Foundation
 import UIKit
+
 extension UITextField {
     
     func settingTextField() {
@@ -11,7 +12,7 @@ extension UITextField {
         minimumFontSize = 11
         clearButtonMode = .whileEditing
         clearButtonMode = .unlessEditing
-        clearButtonMode = .always
+//        clearButtonMode = .always
         becomeFirstResponder()
         textColor = UIColor.lightGray
     }

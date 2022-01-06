@@ -16,17 +16,40 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configuration()
+    }
+    
+    private func configuration() {
         view.backgroundColor = UIColor(named: "viewColor")
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         view.addSubview(mainView)
         createFirstView()
         setupView()
+        addNotifCenter()
+        addMainImage()
     }
     
-    func setupView() {
+    private func addNotifCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // MARK: - Adding mainImage
+    
+    private func addMainImage() {
+        let imageView = UIImageView(image: UIImage(named: "mainImage"))
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: view.frame.width / 1.5 , height: view.frame.height / 17 ))
+            make.top.equalTo(view).offset(70)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+    }
+    
+    // MARK: - Setting mainView
+    
+    private func setupView() {
         mainView.roundCorners(corners: [.topLeft,.topRight,.bottomRight,.bottomLeft], radius: 25)
-        mainView.addShadow(offset: CGSize.init(width: 0, height: 7), color: UIColor.lightGray, radius: 5.0, opacity: 0.8)
+        mainView.addShadow(offset: CGSize.init(width: 0, height: 7), color: UIColor.darkGray, radius: 5.0, opacity: 0.8)
         mainView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: view.frame.width , height: view.frame.height / 2.5 ))
             make.top.equalTo(view).offset(view.frame.height / 5)
@@ -34,10 +57,15 @@ class ViewController: UIViewController {
         }
     }
     
-    func createFirstView() {
+    // MARK: - Adding LocationView and constreints to him
+    
+    private func createFirstView() {
         if let myFirstView = Bundle.main.loadNibNamed("LocationView", owner: self, options: nil)?.first as? LocationView {
             mainView.addSubview(myFirstView)
             myFirstView.backgroundColor = UIColor(named: "myFirstViewColor")
+            myFirstView.createImage()
+            myFirstView.awakeFromNib()
+            myFirstView.createDelegates()
             myFirstView.roundCorners(corners: [.topLeft,.topRight,.bottomRight,.bottomLeft], radius: 25)
             myFirstView.snp.makeConstraints { make in
                 make.top.equalTo(mainView).offset(15)
@@ -51,7 +79,6 @@ class ViewController: UIViewController {
                 make.top.equalTo(myFirstView).offset(20)
                 make.left.equalTo(myFirstView).offset(20)
                 make.right.equalTo(myFirstView.addPhoto.snp.right).offset(-70)
-                
             }
             myFirstView.createAddPhoto()
             myFirstView.addPhoto.snp.makeConstraints { make in
@@ -59,15 +86,13 @@ class ViewController: UIViewController {
                 make.top.equalTo(myFirstView).offset(15)
                 make.right.equalTo(myFirstView).offset(-15)
             }
-            myFirstView.createCollection()
+            myFirstView.collectionView.backgroundColor = .clear
             myFirstView.collectionView.snp.makeConstraints { make in
                 make.bottom.equalTo(myFirstView).offset(-20)
                 make.top.equalTo(myFirstView.locationName.snp.bottom).offset(20)
                 make.right.equalTo(myFirstView).offset(-20)
                 make.centerX.equalTo(myFirstView.snp.centerX)
             }
-            myFirstView.createImage()
-            myFirstView.awakeFromNib()
         }
     }
     

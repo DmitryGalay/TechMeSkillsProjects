@@ -1,8 +1,5 @@
 //
 //  ExtensionColorLabel.swift
-//  UILayoutSnapKit
-//
-//  Created by Dima on 27.11.21.
 //
 
 import Foundation

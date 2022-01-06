@@ -9,23 +9,42 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
-class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var collectionView : UICollectionView!
-
+    
     var images = [UIImage]()
     private let storage = Storage.storage().reference()
+    var searchTimer: Timer?
     
-    func createLabel() {
+    // MARK: - Сreation parameters textfield
+    
+    public func createLabel() {
         locationName.settingTextField()
         locationName.backgroundColor = .clear
         locationName.placeholder = "Название локации"
         locationName.tintColor = UIColor(named: "textFieldColor")
+        locationName.addTarget(self, action: #selector(textFieldDidEditingChanged(_:)), for: .editingChanged)
     }
     
-    func createAddPhoto() {
+    @objc func textFieldDidEditingChanged(_ textField: UITextField) {
+        if searchTimer != nil {
+            locationName.tintColor = UIColor(named: "textFieldColor")
+            searchTimer?.invalidate()
+            searchTimer = nil
+        }
+        searchTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(searchForKeyword(_:)), userInfo: textField.text!, repeats: true)
+    }
+    
+    @objc func searchForKeyword(_ timer: Timer) {
+        locationName.tintColor = .clear
+    }
+    
+    // MARK: - Creation saveButton and add save to Firebase
+    
+    public func createAddPhoto() {
         addPhoto.setImage(UIImage(named:"add_btn"), for: .normal)
         addPhoto.tintColor = .black
         addPhoto.addTarget(self, action: #selector(addNewPhoto), for: .touchUpInside)
@@ -41,8 +60,8 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
                 return
             }
             storage.child("images/\(nameFile).png").putData(imageData,
-                                                                     metadata: nil,
-                                                                     completion: { [self]_, error in
+                                                            metadata: nil,
+                                                            completion: { [self]_, error in
                 guard error == nil else {
                     print("Filed to upload")
                     return
@@ -57,29 +76,31 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
                 })
             })
         }
-        
     }
     
-    func createCollection() {
-        collectionView.backgroundColor = .clear
-    }
+    // MARK: - Filling the array with pictures
     
-    func createImage() {
+    public func createImage() {
         for i in 1...6{
             let image = UIImage(named: "image_\(i)")!
-            
             images.append(image)
         }
     }
     
-    override func awakeFromNib() {
+    public func createDelegates() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        locationName.delegate = self
+    }
+    
+    // MARK: - Registration cell
+    
+    override func awakeFromNib() {
         let nibName = UINib(nibName: "CollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
-        
-        
     }
+    
+    // MARK: - Setting cell
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
@@ -88,7 +109,6 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
         cell.imageViewCell.contentMode = .scaleAspectFit
         cell.roundCorners(corners: [.topLeft,.topRight,.bottomRight,.bottomLeft], radius: 15)
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -103,7 +123,6 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -124,19 +143,13 @@ class LocationView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,U
         }, completion: { finished in
             print("Napkins opened!")
         })
-        
         imageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         imageView.addGestureRecognizer(tap)
         collectionView.addSubview(imageView)
-        
     }
+    
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
-        
     }
-    
-    
-    
-    
 }
