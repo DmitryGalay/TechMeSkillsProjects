@@ -8,44 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    let lenght: CGFloat = 100
+    let count: CGFloat = 100
     var body: some View {
-        VStack {
+        ZStack {
+            Color.gray
+                .ignoresSafeArea()
             VStack {
                 VStack {
-                    HStack {
-                        Image("sunny").frame(width: lenght, height: lenght)
-                        MainTemp()
-                    }.padding(.leading, lenght / 2 )
-                        .frame(width: lenght * 4, height: lenght * 2, alignment: .leading)
-                    DaysTemp(myWidth: lenght )
-                    .frame(width: lenght * 4, height: lenght * 2, alignment: .center)
-                }.overlay(
-                    CornerRadius(myWight: lenght * 4, myHeight: lenght * 4)
+                    VStack {
+                        HStack {
+                            Image("sunny").frame(width: count, height: count)
+                            MainTemp()
+                        }.padding(.leading, count / 2 )
+                            .frame(width: count * 4, height: count * 2, alignment: .leading)
+                        DaysTemp(width: count, firstDay: "Friday", secondDay: "Saturday", thirdDay: "Sunday", spacerWight: count * 2, mainSpacerWight: count / 1.5)
+                            .frame(width: count * 4, height: count * 2, alignment: .center)
+                    }.overlay(
+                        CornerRadius(myWight: count * 4, myHeight: count * 4)
+                    )
+                }
+                .frame(width: 400, height: 400, alignment: .top)
+                Spacer().frame(height: 75)
+                HStack {
+                    Image("sunnyAverage")
+                    MainTemp()
+                    DaysTemp(width: count / 2, firstDay: "Fri", secondDay: "Sat", thirdDay: "San", spacerWight: count / 4, mainSpacerWight: count / 4)
+                }
+                .overlay(
+                    CornerRadius(myWight: count * 4, myHeight: count * 2)
+                )
+                Spacer().frame(height: 100)
+                VStack {
+                    Image("sunnyAverage")
+                    MainTemp()
+                }
+                .overlay(
+                    CornerRadius(myWight: count * 2, myHeight: count * 2)
                 )
             }
-            .frame(width: 400, height: 400, alignment: .top)
-            Spacer().frame(height: 75)
-            HStack {
-                Image("sunnyAverage")
-                MainTemp()
-                DaysTemp(myWidth: lenght / 2)
-            }
-//            .overlay(
-//                CornerRadius(myWight: lenght * 4, myHeight: lenght * 2)
-//            )
-            Spacer().frame(height: 100)
-            VStack {
-                Image("sunnyAverage")
-                MainTemp()
-            }
-            .overlay(
-                CornerRadius(myWight: lenght * 2, myHeight: lenght * 2)
-            )
         }
-        .background(Color.red)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

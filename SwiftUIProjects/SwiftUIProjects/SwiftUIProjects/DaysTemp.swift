@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct DaysTemp: View {
-    let myWidth: CGFloat
+    let width: CGFloat
+    let firstDay: String
+    let secondDay: String
+    let thirdDay: String
+    let spacerWight: CGFloat
+    let mainSpacerWight: CGFloat
     var body: some View {
         VStack {
-            DailyWeatherView(imageName: "sunnySmall", day: "Friday", temp: "12", myWidth: myWidth)
-            DailyWeatherView(imageName: "cloudySmall", day: "Saturday", temp: "Saturday", myWidth: myWidth)
-            DailyWeatherView(imageName: "rainySmall", day: "Sunday", temp: "17º", myWidth: myWidth)
+            DailyWeatherView(imageName: "sunnySmall", day: firstDay, temp: "12", myWidth: width, spacerWidth: spacerWight, mainSpacerWight: mainSpacerWight)
+            DailyWeatherView(imageName: "cloudySmall", day: secondDay, temp: "14º", myWidth: width, spacerWidth: spacerWight, mainSpacerWight: mainSpacerWight)
+            DailyWeatherView(imageName: "rainySmall", day: thirdDay, temp: "17º", myWidth: width, spacerWidth: spacerWight, mainSpacerWight: mainSpacerWight)
         }
     }
 }

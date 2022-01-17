@@ -13,6 +13,6 @@ struct CornerRadius: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .stroke(Color.black, lineWidth: 1)
-            .frame(width: myWight , height: myWight , alignment: .top)
+            .frame(width: myWight , height: myHeight , alignment: .top)
     }
 }
