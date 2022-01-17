@@ -24,9 +24,3 @@ struct MainTemp: View {
         }
     }
 }
-
-struct MainTemp_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTemp()
-    }
-}
