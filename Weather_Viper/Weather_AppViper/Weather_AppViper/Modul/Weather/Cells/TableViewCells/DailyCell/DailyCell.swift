@@ -96,7 +96,6 @@ class DailyCell: UITableViewCell {
             make.centerY.equalTo(containerView.snp.centerY)
             make.size.equalTo(CGSize(width: 30, height: 30))
         }
-            
     }
     
     private func configTemp() {
