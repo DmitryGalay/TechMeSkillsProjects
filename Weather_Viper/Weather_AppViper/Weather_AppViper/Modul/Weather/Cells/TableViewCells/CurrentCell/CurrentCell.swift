@@ -21,7 +21,7 @@ class CurrentCell: UITableViewCell {
     
     var cityName: UILabel = {
         let text = UILabel()
-        text.font = UIFont.systemFont(ofSize: 30, weight: .medium)
+        text.font = UIFont.systemFont(ofSize: 45, weight: .medium)
         text.textAlignment = .center
         text.textColor = .white
         text.numberOfLines = 0
@@ -180,7 +180,7 @@ class CurrentCell: UITableViewCell {
         }
             
             iconImageView.snp.makeConstraints { make in
-                make.right.equalTo(descriptionWeather.snp.left).offset(-10)
+                make.right.equalTo(descriptionWeather.snp.left).offset(-5)
                 make.bottom.equalTo(descriptionWeather.snp.bottom)
                 make.height.equalTo(descriptionWeather.snp.height)
                 make.width.equalTo(iconImageView.snp.height)

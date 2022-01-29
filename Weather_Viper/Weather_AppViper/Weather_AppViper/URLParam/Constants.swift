@@ -32,5 +32,5 @@ enum Parameters {
 }
 
 enum Direction: String, CaseIterable {
-    case N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WWNW, NW, NNW
+    case N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW
 }

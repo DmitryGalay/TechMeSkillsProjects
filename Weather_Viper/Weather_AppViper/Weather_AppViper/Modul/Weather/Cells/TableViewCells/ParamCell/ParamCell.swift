@@ -9,7 +9,7 @@ import Foundation
 import SnapKit
 
 class ParamCell: UITableViewCell {
-
+    
     static let identifier = "ParamCell"
     
     var containerView: UIView = {
@@ -35,7 +35,7 @@ class ParamCell: UITableViewCell {
     
     var windDegLabel: UILabel = {
         let text = UILabel()
-        text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        text.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
         text.textColor = .white
         return text
     }()
@@ -47,7 +47,6 @@ class ParamCell: UITableViewCell {
         icon.contentMode = .scaleAspectFill
         return icon
     }()
-    
     
     var humidityLabel: UILabel = {
         let text = UILabel()
@@ -97,26 +96,25 @@ class ParamCell: UITableViewCell {
     }()
     
     var sunriseLabel: UILabel = {
-       let text = UILabel()
+        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textColor = .white
         return text
     }()
     
     var sunsetIcon: UIImageView = {
-       let icon = UIImageView()
+        let icon = UIImageView()
         icon.image = UIImage(systemName: "sunset.fill")?.withRenderingMode(.alwaysOriginal)
         icon.contentMode = .scaleAspectFit
         return icon
     }()
     
     var sunsetLabel: UILabel = {
-       let text = UILabel()
+        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textColor = .white
         return text
     }()
-    
     
     static func nib() -> UINib {
         return UINib(nibName: "ParamCell", bundle: nil)
@@ -131,14 +129,13 @@ class ParamCell: UITableViewCell {
         configСontainerView()
         configHumidity()
         configWind()
-//        configPressure()
-        configVisibility()
         configSunrise()
-//        configSunset()
+        configSunset()
+        configVisibility()
+        configPressure()
     }
     
     private func configСontainerView() {
-        
         contentView.addSubview(containerView)
         containerView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -151,11 +148,9 @@ class ParamCell: UITableViewCell {
         containerView.addSubview(humidityLabel)
         containerView.addSubview(humidityIcon)
         humidityLabel.snp.makeConstraints { make in
-            make.left.equalTo(contentView.center.x / 4)
+            make.left.equalTo(contentView.center.x / 5)
             make.top.equalToSuperview().inset(15)
-           // make.top.equalTo(descriptionWeather.snp.bottom).offset(25)
         }
-
         humidityIcon.snp.makeConstraints { make in
             make.right.equalTo(humidityLabel.snp.left)
             make.bottom.equalTo(humidityLabel.snp.bottom)
@@ -167,84 +162,32 @@ class ParamCell: UITableViewCell {
     private func configWind() {
         containerView.addSubview(windLabel)
         containerView.addSubview(windIcon)
-//        containerView.addSubview(windDegLabel)
-        
+        containerView.addSubview(windDegLabel)
         windLabel.snp.makeConstraints { make in
-//            make.size.equalTo(CGSize(width: 70, height: 30))
-            make.left.equalTo(contentView.center.x / 4)
-            make.top.equalTo(humidityLabel.snp.bottom)
+            make.left.equalTo(contentView.center.x / 5)
+            make.top.equalTo(humidityLabel.snp.bottom).offset(15)
             make.bottom.equalToSuperview().inset(15)
-//            make.size.equalTo(CGSize(width: 100, height: 30))
-//            make.left.equalTo( contentView.center.x / 3)
-//            make.top.equalTo(humidityLabel.snp.bottom).offset(10)
-//            make.bottom.equalToSuperview().inset(20)
-           
         }
         windIcon.snp.makeConstraints { make in
             make.right.equalTo(windLabel.snp.left)
             make.bottom.equalTo(windLabel.snp.bottom)
-            make.height.equalTo(windLabel.snp.height )
+            make.height.equalTo(humidityLabel.snp.height)
+            make.width.equalTo(humidityIcon.snp.height)
+        }
+        windDegLabel.snp.makeConstraints { make in
+            make.left.equalTo(windLabel.snp.right).offset(5)
+            make.bottom.equalTo(windLabel.snp.bottom)
+            make.height.equalTo(windLabel.snp.height)
             make.width.equalTo(windIcon.snp.height)
-
-        }
-//        windDegLabel.snp.makeConstraints { make in
-//            make.left.equalTo(windLabel.snp.right)
-//            make.bottom.equalTo(windLabel.snp.bottom)
-//            make.height.equalTo(windLabel.snp.height)
-//            make.width.equalTo(windIcon.snp.height)
-//
-//        }
-    }
-    
-    
-    private func configPressure() {
-        containerView.addSubview(pressureLabel)
-        containerView.addSubview(pressureIcon)
-        
-        pressureLabel.snp.makeConstraints { make in
-            make.top.equalTo(visibilityLabel.snp.bottom)
-            make.right.equalTo(-contentView.center.x / 8)
-            make.bottom.equalToSuperview().inset(15)
-           
-        }
-        
-        pressureIcon.snp.makeConstraints { make in
-            make.right.equalTo(pressureLabel.snp.left)
-            make.bottom.equalTo(pressureLabel.snp.bottom)
-            make.height.equalTo(pressureLabel.snp.height)
-            make.width.equalTo(pressureIcon.snp.height)
-           
-        }
-    }
-    
-    private func configVisibility() {
-        containerView.addSubview(visibilityLabel)
-        containerView.addSubview(visibilityIcon)
-        
-        visibilityLabel.snp.makeConstraints { make in
-            make.right.equalTo(-contentView.center.x / 8)
-            make.top.equalToSuperview().inset(15)
-           
-        }
-        
-        visibilityIcon.snp.makeConstraints { make in
-            make.right.equalTo(visibilityLabel.snp.left)
-            make.bottom.equalTo(visibilityLabel.snp.bottom)
-            make.height.equalTo(visibilityLabel.snp.height)
-            make.width.equalTo(visibilityIcon.snp.height)
-            
         }
     }
     
     private func configSunrise() {
         containerView.addSubview(sunriseLabel)
         containerView.addSubview(sunriseIcon)
-       
         sunriseLabel.snp.makeConstraints { make in
             make.centerX.equalTo(contentView.center.x)
-//            make.left.equalTo(humidityLabel.snp.right).offset(50)
             make.top.equalToSuperview().inset(15)
-            
         }
         sunriseIcon.snp.makeConstraints { make in
             make.right.equalTo(sunriseLabel.snp.left)
@@ -253,18 +196,51 @@ class ParamCell: UITableViewCell {
             make.width.equalTo(sunriseIcon.snp.height)
         }
     }
-
+    
     private func configSunset() {
         containerView.addSubview(sunsetIcon)
         containerView.addSubview(sunsetLabel)
-
         sunsetLabel.snp.makeConstraints { make in
-            
+            make.centerX.equalTo(contentView.center.x)
+            make.top.equalTo(sunriseLabel.snp.bottom).offset(15)
+            make.bottom.equalToSuperview().inset(15)
         }
         sunsetIcon.snp.makeConstraints { make in
-            
+            make.right.equalTo(sunsetLabel.snp.left)
+            make.bottom.equalTo(sunsetLabel.snp.bottom)
+            make.height.equalTo(sunsetLabel.snp.height)
+            make.width.equalTo(sunsetIcon.snp.height)
         }
     }
-
+    
+    private func configVisibility() {
+        containerView.addSubview(visibilityLabel)
+        containerView.addSubview(visibilityIcon)
+        visibilityLabel.snp.makeConstraints { make in
+            make.right.equalTo(-contentView.center.x / 8)
+            make.top.equalToSuperview().inset(15)
+        }
+        visibilityIcon.snp.makeConstraints { make in
+            make.right.equalTo(visibilityLabel.snp.left)
+            make.bottom.equalTo(visibilityLabel.snp.bottom)
+            make.height.equalTo(visibilityLabel.snp.height)
+            make.width.equalTo(visibilityIcon.snp.height)
+        }
+    }
+    
+    private func configPressure() {
+        containerView.addSubview(pressureLabel)
+        containerView.addSubview(pressureIcon)
+        pressureLabel.snp.makeConstraints { make in
+            make.right.equalTo(sunsetLabel.snp.right).offset(140)
+            make.top.equalTo(visibilityLabel.snp.bottom).offset(15)
+            make.bottom.equalToSuperview().inset(15)
+        }
+        pressureIcon.snp.makeConstraints { make in
+            make.right.equalTo(pressureLabel.snp.left)
+            make.bottom.equalTo(pressureLabel.snp.bottom)
+            make.height.equalTo(humidityLabel.snp.height)
+            make.width.equalTo(humidityIcon.snp.height)
+        }
+    }
 }
-

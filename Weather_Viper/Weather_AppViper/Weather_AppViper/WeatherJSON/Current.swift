@@ -13,7 +13,7 @@ struct Current: Codable {
     let wind_deg: Float
     let feels_like: Float
     let visibility: Int
-    let pressure: Int
+    let pressure: Float
     let weather: [Weather]
 }
 

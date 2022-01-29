@@ -29,7 +29,8 @@ extension Current {
         return" : \(Int(visibility) / 1000)km"
     }
     var currentPressure: String {
-        return" : \(Int(pressure))hPa"
+        let newPress = String(format: "%.1f", (pressure) / 1000)
+        return" : \(newPress)kPa"
     }
     var weatherIcon: String {
         return weather.first?.icon ?? ""

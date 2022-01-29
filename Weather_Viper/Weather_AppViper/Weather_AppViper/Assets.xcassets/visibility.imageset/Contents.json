@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-eye-24.png",
+      "filename" : "visibility.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "visibility@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "visibility@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

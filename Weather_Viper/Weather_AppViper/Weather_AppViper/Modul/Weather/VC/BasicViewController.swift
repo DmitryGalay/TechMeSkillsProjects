@@ -152,11 +152,12 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ParamCell.identifier, for: indexPath) as? ParamCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.humidityLabel.text = basicEntity?.humidity
-            cell.windDegLabel.text = basicEntity?.wind
-//            cell.pressureLabel.text = basicEntity?.pressure
+            cell.windDegLabel.text = basicEntity?.wind_deg
+            cell.windLabel.text = basicEntity?.wind
+            cell.pressureLabel.text = basicEntity?.pressure
             cell.visibilityLabel.text = basicEntity?.visibility
             cell.sunriseLabel.text = basicEntity?.sunrise
-//            cell.sunsetLabel.text = basicEntity?.sunset
+            cell.sunsetLabel.text = basicEntity?.sunset
 
             return cell
             
