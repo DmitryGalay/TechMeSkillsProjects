@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
         presenter.viewIsReady()
         config()
     }

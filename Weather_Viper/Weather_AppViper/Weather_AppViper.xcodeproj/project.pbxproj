@@ -21,7 +21,6 @@
 		3255B35C27A1A914005E5AB4 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B34827A1A914005E5AB4 /* WeatherService.swift */; };
 		3255B35D27A1A914005E5AB4 /* SharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B34927A1A914005E5AB4 /* SharedStorage.swift */; };
 		3255B35E27A1A914005E5AB4 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B34A27A1A914005E5AB4 /* LocationService.swift */; };
-		3255B35F27A1A914005E5AB4 /* WeatherResponsee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B35327A1A914005E5AB4 /* WeatherResponsee.swift */; };
 		3255B36027A1A914005E5AB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B35527A1A914005E5AB4 /* Constants.swift */; };
 		3255B36327A1AA31005E5AB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B36127A1AA30005E5AB4 /* SearchViewController.swift */; };
 		3255B36727A1ACB8005E5AB4 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B36627A1ACB8005E5AB4 /* SearchEntity.swift */; };
@@ -51,7 +50,6 @@
 		3255B3A627A1B57E005E5AB4 /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3255B3A527A1B57E005E5AB4 /* DailyCell.xib */; };
 		3255B3A827A1B587005E5AB4 /* HourlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3255B3A727A1B586005E5AB4 /* HourlyCell.xib */; };
 		3255B3AA27A1B5A5005E5AB4 /* CurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3255B3A927A1B5A5005E5AB4 /* CurrentCell.xib */; };
-		3255B3AD27A1DFAC005E5AB4 /* Extension_Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B3AC27A1DFAC005E5AB4 /* Extension_Label.swift */; };
 		32C4AD3227A5685E00EA2F32 /* ParamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD3127A5685E00EA2F32 /* ParamCell.swift */; };
 		32C4AD3427A5686D00EA2F32 /* ParamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C4AD3327A5686D00EA2F32 /* ParamCell.xib */; };
 		32C4AD3627A58F7400EA2F32 /* Extension+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD3527A58F7400EA2F32 /* Extension+Model.swift */; };
@@ -84,7 +82,6 @@
 		3255B34827A1A914005E5AB4 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		3255B34927A1A914005E5AB4 /* SharedStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedStorage.swift; sourceTree = "<group>"; };
 		3255B34A27A1A914005E5AB4 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		3255B35327A1A914005E5AB4 /* WeatherResponsee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponsee.swift; sourceTree = "<group>"; };
 		3255B35527A1A914005E5AB4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3255B36127A1AA30005E5AB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3255B36627A1ACB8005E5AB4 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		3255B3A527A1B57E005E5AB4 /* DailyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
 		3255B3A727A1B586005E5AB4 /* HourlyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyCell.xib; sourceTree = "<group>"; };
 		3255B3A927A1B5A5005E5AB4 /* CurrentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentCell.xib; sourceTree = "<group>"; };
-		3255B3AC27A1DFAC005E5AB4 /* Extension_Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Label.swift; sourceTree = "<group>"; };
 		32C4AD3127A5685E00EA2F32 /* ParamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamCell.swift; sourceTree = "<group>"; };
 		32C4AD3327A5686D00EA2F32 /* ParamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParamCell.xib; sourceTree = "<group>"; };
 		32C4AD3527A58F7400EA2F32 /* Extension+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Model.swift"; sourceTree = "<group>"; };
@@ -289,7 +285,6 @@
 		3255B35227A1A914005E5AB4 /* WeatherJSON */ = {
 			isa = PBXGroup;
 			children = (
-				3255B35327A1A914005E5AB4 /* WeatherResponsee.swift */,
 				32C4AD3727A5906E00EA2F32 /* WeatherResponse.swift */,
 				32C4AD3927A5908600EA2F32 /* Current.swift */,
 				32C4AD3B27A5909D00EA2F32 /* Weather.swift */,
@@ -391,7 +386,6 @@
 		3255B3AB27A1DF8D005E5AB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3255B3AC27A1DFAC005E5AB4 /* Extension_Label.swift */,
 				32C4AD3527A58F7400EA2F32 /* Extension+Model.swift */,
 			);
 			path = Extensions;
@@ -568,7 +562,6 @@
 				3255B39A27A1B276005E5AB4 /* HourlyCell.swift in Sources */,
 				3255B35A27A1A914005E5AB4 /* DateFormatterServiceImp.swift in Sources */,
 				3255B35D27A1A914005E5AB4 /* SharedStorage.swift in Sources */,
-				3255B35F27A1A914005E5AB4 /* WeatherResponsee.swift in Sources */,
 				3255B37727A1AE65005E5AB4 /* Module.swift in Sources */,
 				32C4AD4627A5910F00EA2F32 /* DailyIcon.swift in Sources */,
 				3255B36927A1ACDB005E5AB4 /* SearchAssembly.swift in Sources */,
@@ -578,7 +571,6 @@
 				3255B35727A1A914005E5AB4 /* SharedStorageImp.swift in Sources */,
 				3255B38827A1B01D005E5AB4 /* WeatherRouter.swift in Sources */,
 				3255B38227A1AF69005E5AB4 /* WeatherPresenterImp.swift in Sources */,
-				3255B3AD27A1DFAC005E5AB4 /* Extension_Label.swift in Sources */,
 				3255B35827A1A914005E5AB4 /* LocationServiceImp.swift in Sources */,
 				32C4AD3627A58F7400EA2F32 /* Extension+Model.swift in Sources */,
 				32C4AD3A27A5908600EA2F32 /* Current.swift in Sources */,

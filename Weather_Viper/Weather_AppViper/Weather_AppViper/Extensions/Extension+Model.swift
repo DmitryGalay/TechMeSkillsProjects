@@ -10,10 +10,10 @@ import Foundation
 
 extension Current {
     var currentTemp: String{
-        return"\(Int(temp)) ˚"
+        return"\(Int(temp))˚"
     }
     var currentWindSpeed: String {
-        return" : \(Int(wind_speed)) m/s"
+        return" : \(Int(wind_speed))m/s"
     }
     var currentHumidity: String {
         return" : \(Int(humidity))%"

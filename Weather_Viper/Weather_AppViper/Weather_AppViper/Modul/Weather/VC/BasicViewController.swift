@@ -20,14 +20,11 @@ class BasicViewController: UIViewController {
     
     var dateFormatterService: DateFormatterService!
 
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewIsReady()
         config()
     }
-    
-
     
     private func config() {
         configTableView()
@@ -77,7 +74,7 @@ class BasicViewController: UIViewController {
     
     private func setHourlyCells(cell: WeekCell, indexPath: IndexPath) {
         let dt = basicEntity?.hourly[indexPath.row].dt ?? 0
-        let date = dateFormatterService.dateFormater(dt: dt, format: "H")
+        let date = dateFormatterService.dateFormater(dt: dt, format: "HH")
         let iconName = basicEntity?.hourly[indexPath.row].weather.first?.icon
         
         for icons in iconsDic.iconsDic {
@@ -88,12 +85,11 @@ class BasicViewController: UIViewController {
         }
         cell.hours.text = date
         cell.temperature.text = "\(Int(basicEntity?.hourly[indexPath.row].temp ?? 0))°"
-        
     }
     
     private func setDayOfWeek(indexPath: IndexPath) -> String {
         guard let dt = (basicEntity?.daily[indexPath.row].dt) else { return "" }
-        let date = dateFormatterService.dateFormater(dt: dt, format: "E")
+        let date = dateFormatterService.dateFormater(dt: dt, format: "EEEE")
         return date
     }
     
@@ -118,20 +114,17 @@ class BasicViewController: UIViewController {
         return maxTemp
     }
     
-//    MARK: - Actions
-    
-    
     @objc func actionShowSearchScreen() {
         presenter.showSearchScreen()
+        print(basicEntity?.daily.count)
     }
 }
-
-//MARK: - Data Source TableView
 
 extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return basicEntity?.daily.count ?? 0
 }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
@@ -141,12 +134,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
             cell.iconImageView.image = setIcon(indexPath: indexPath)
-//            cell.humidityLabel.text = basicEntity?.humidity
-//            cell.windLabel.text = basicEntity?.wind
-//            cell.sunriseLabel.text = basicEntity?.sunrise
-//            cell.sunsetLabel.text = basicEntity?.sunset
             cell.feelsLikeLabel.text = basicEntity?.feelsLike
-            
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ParamCell.identifier, for: indexPath) as? ParamCell else { return UITableViewCell() }
@@ -158,19 +146,15 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.visibilityLabel.text = basicEntity?.visibility
             cell.sunriseLabel.text = basicEntity?.sunrise
             cell.sunsetLabel.text = basicEntity?.sunset
-
             return cell
-            
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyCell.identifier, for: indexPath) as? HourlyCell else { return UITableViewCell() }
-            cell.backgroundColor = .clear
+            cell.backgroundColor = .blue
             cell.setTemp = { [weak self] cell, index in
                 self?.setHourlyCells(cell: cell, indexPath: index)
             }
             cell.collectionView.reloadData()
-            
             return cell
-            
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyCell.indetifier, for: indexPath) as? DailyCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
@@ -179,15 +163,14 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.minTempLabel.text = setMinTemp(indexPath: indexPath)
             cell.maxTempLabel.text = setMaxTemp(indexPath: indexPath)
             cell.slashLabel.text = "/"
-            
             return cell
         }
     }
 }
+
 extension BasicViewController: BasicPresenterOutput {
     func setState(with entity: BasicEntity) {
         basicEntity = entity
         tableView.reloadData()
     }
 }
-
