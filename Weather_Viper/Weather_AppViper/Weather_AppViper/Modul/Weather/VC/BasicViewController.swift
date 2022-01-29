@@ -139,10 +139,12 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.cityName.text = basicEntity?.city
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
+            cell.iconImageView.image = setIcon(indexPath: indexPath)
             cell.humidityLabel.text = basicEntity?.humidity
             cell.windLabel.text = basicEntity?.wind
             cell.sunriseLabel.text = basicEntity?.sunrise
             cell.sunsetLabel.text = basicEntity?.sunset
+            cell.feelsLikeLabel.text = basicEntity?.feelsLike
             
             
             return cell

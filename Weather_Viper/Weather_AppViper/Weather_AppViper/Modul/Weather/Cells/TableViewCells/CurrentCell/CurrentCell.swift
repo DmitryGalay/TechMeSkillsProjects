@@ -28,6 +28,14 @@ class CurrentCell: UITableViewCell {
         return text
     }()
     
+    var feelsLikeLabel: UILabel = {
+        let text = UILabel()
+        text.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        text.textAlignment = .center
+        text.textColor = .white
+        return text
+    }()
+    
     var temperatureLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 120, weight: .thin)
@@ -103,6 +111,13 @@ class CurrentCell: UITableViewCell {
         return text
     }()
     
+    var iconImageView: UIImageView = {
+       let icon = UIImageView()
+        icon.tintColor = .white
+        icon.contentMode = .scaleAspectFit
+        return icon
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         config()
@@ -111,12 +126,15 @@ class CurrentCell: UITableViewCell {
     private func config() {
         configСontainerView()
         configCityLabel()
+        feelsLike()
         configTemperatureLabel()
         configWeatherBasic()
+        createWeatherIcon()
         configHumidity()
         configWind()
         configSunrise()
         configSunset()
+        
     }
     private func configСontainerView() {
         contentView.addSubview(containerView)
@@ -134,10 +152,19 @@ class CurrentCell: UITableViewCell {
         }
     }
     
+    private func feelsLike() {
+        containerView.addSubview(feelsLikeLabel)
+        feelsLikeLabel.snp.makeConstraints { make in
+            make.top.equalTo(cityName.snp.bottom).offset(5)
+            make.left.right.equalToSuperview()
+        }
+    }
+    
+    
     private func configTemperatureLabel() {
         containerView.addSubview(temperatureLabel)
         temperatureLabel.snp.makeConstraints { make in
-            make.top.equalTo(cityName.snp.bottom)
+            make.top.equalTo(feelsLikeLabel.snp.bottom)
             make.left.right.equalToSuperview()
         }
     }
@@ -147,6 +174,18 @@ class CurrentCell: UITableViewCell {
         descriptionWeather.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(temperatureLabel.snp.bottom)
+        }
+    }
+    
+    private func createWeatherIcon() {
+        containerView.addSubview(iconImageView)
+        iconImageView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(descriptionWeather.snp.bottom)
+            
+////            make.left.right.equalToSuperview()
+//            make.left.equalTo(descriptionWeather.snp.right)
+            //make.size.equalTo(CGSize(width: 30, height: 30))
         }
     }
     

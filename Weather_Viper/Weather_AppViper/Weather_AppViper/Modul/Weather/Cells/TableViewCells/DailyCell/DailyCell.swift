@@ -28,6 +28,7 @@ class DailyCell: UITableViewCell {
         return text
     }()
     
+    
     var minTempLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
