@@ -6,12 +6,13 @@
 //
 
 import Foundation
+
 enum Constants {
-//    static let baseUrl = "https://api.openweathermap.org/data/2.5/forecast?"
     static let baseUrl = "https://api.openweathermap.org/data/2.5/onecall?"
     static let cityUrl = ""
     static let apiKey = "34014798c643e6767504e20f55a4769d"
 }
+
 enum StorageKey {
     static let keyForWeatherForecast = "keyForWeatherForecast"
     static let keyForLocation = "keyForLocation"
@@ -30,3 +31,6 @@ enum Parameters {
     
 }
 
+enum Direction: String, CaseIterable {
+    case N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WWNW, NW, NNW
+}

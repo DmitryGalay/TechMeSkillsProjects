@@ -53,6 +53,7 @@ class BasicViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CurrentCell.nib(), forCellReuseIdentifier: CurrentCell.identifier)
+        tableView.register(ParamCell.nib(), forCellReuseIdentifier: ParamCell.identifier)
         tableView.register(HourlyCell.nib(), forCellReuseIdentifier: HourlyCell.identifier)
         tableView.register(DailyCell.nib(), forCellReuseIdentifier: DailyCell.indetifier)
     }
@@ -140,15 +141,26 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
             cell.iconImageView.image = setIcon(indexPath: indexPath)
-            cell.humidityLabel.text = basicEntity?.humidity
-            cell.windLabel.text = basicEntity?.wind
-            cell.sunriseLabel.text = basicEntity?.sunrise
-            cell.sunsetLabel.text = basicEntity?.sunset
+//            cell.humidityLabel.text = basicEntity?.humidity
+//            cell.windLabel.text = basicEntity?.wind
+//            cell.sunriseLabel.text = basicEntity?.sunrise
+//            cell.sunsetLabel.text = basicEntity?.sunset
             cell.feelsLikeLabel.text = basicEntity?.feelsLike
-            
             
             return cell
         case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ParamCell.identifier, for: indexPath) as? ParamCell else { return UITableViewCell() }
+            cell.backgroundColor = .clear
+            cell.humidityLabel.text = basicEntity?.humidity
+            cell.windDegLabel.text = basicEntity?.wind
+//            cell.pressureLabel.text = basicEntity?.pressure
+            cell.visibilityLabel.text = basicEntity?.visibility
+            cell.sunriseLabel.text = basicEntity?.sunrise
+//            cell.sunsetLabel.text = basicEntity?.sunset
+
+            return cell
+            
+        case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyCell.identifier, for: indexPath) as? HourlyCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.setTemp = { [weak self] cell, index in

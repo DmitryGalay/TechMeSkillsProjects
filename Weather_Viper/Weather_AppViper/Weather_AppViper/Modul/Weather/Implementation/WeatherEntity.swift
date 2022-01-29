@@ -12,9 +12,12 @@ struct BasicEntity: Codable {
     var descript: String
     var humidity: String
     var wind: String
+    let wind_deg: String
     var sunrise: String
     var sunset: String
     var feelsLike: String
+    var pressure: String
+    var visibility: String
     var hourly: [Hourly]
     var daily: [Daily]
 }

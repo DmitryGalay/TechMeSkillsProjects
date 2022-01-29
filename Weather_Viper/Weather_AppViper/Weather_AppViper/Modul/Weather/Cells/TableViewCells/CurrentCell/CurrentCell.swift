@@ -59,7 +59,7 @@ class CurrentCell: UITableViewCell {
         icon.contentMode = .scaleAspectFit
         return icon
     }()
-    
+
     var humidityLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -75,35 +75,35 @@ class CurrentCell: UITableViewCell {
         icon.contentMode = .scaleAspectFit
         return icon
     }()
-    
+
     var windLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textColor = .white
         return text
     }()
-    
+
     var sunriseIcon: UIImageView = {
         let icon = UIImageView()
         icon.image = UIImage(systemName: "sunrise.fill")?.withRenderingMode(.alwaysOriginal)
         icon.contentMode = .scaleAspectFit
         return icon
     }()
-    
+
     var sunriseLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textColor = .white
         return text
     }()
-    
+
     var sunsetIcon: UIImageView = {
        let icon = UIImageView()
         icon.image = UIImage(systemName: "sunset.fill")?.withRenderingMode(.alwaysOriginal)
         icon.contentMode = .scaleAspectFit
         return icon
     }()
-    
+
     var sunsetLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -129,11 +129,11 @@ class CurrentCell: UITableViewCell {
         feelsLike()
         configTemperatureLabel()
         configWeatherBasic()
-        createWeatherIcon()
-        configHumidity()
-        configWind()
-        configSunrise()
-        configSunset()
+        //createWeatherIcon()
+//        configHumidity()
+//        configWind()
+//        configSunrise()
+//        configSunset()
         
     }
     private func configСontainerView() {
@@ -171,33 +171,52 @@ class CurrentCell: UITableViewCell {
     
     private func configWeatherBasic() {
         containerView.addSubview(descriptionWeather)
+        containerView.addSubview(iconImageView)
         descriptionWeather.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.equalTo(contentView.center.x)
+            //make.left.right.equalToSuperview()
             make.top.equalTo(temperatureLabel.snp.bottom)
+            make.bottom.equalToSuperview().inset(15)
         }
+            
+            iconImageView.snp.makeConstraints { make in
+                make.right.equalTo(descriptionWeather.snp.left).offset(-10)
+                make.bottom.equalTo(descriptionWeather.snp.bottom)
+                make.height.equalTo(descriptionWeather.snp.height)
+                make.width.equalTo(iconImageView.snp.height)
+            }
+        
     }
     
     private func createWeatherIcon() {
         containerView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            //make.left.right.equalToSuperview()
             make.top.equalTo(descriptionWeather.snp.bottom)
+            make.bottom.equalToSuperview().inset(15)
+        }
+            humidityIcon.snp.makeConstraints { make in
+                make.right.equalTo(humidityLabel.snp.left)
+                make.bottom.equalTo(humidityLabel.snp.bottom)
+                make.height.equalTo(humidityLabel.snp.height)
+                make.width.equalTo(humidityIcon.snp.height)
+            }
             
 ////            make.left.right.equalToSuperview()
 //            make.left.equalTo(descriptionWeather.snp.right)
             //make.size.equalTo(CGSize(width: 30, height: 30))
-        }
+        
     }
     
     private func configHumidity() {
         containerView.addSubview(humidityLabel)
         containerView.addSubview(humidityIcon)
-        
+
         humidityLabel.snp.makeConstraints { make in
             make.left.equalTo(contentView.center.x / 2)
             make.top.equalTo(descriptionWeather.snp.bottom).offset(25)
         }
-        
+
         humidityIcon.snp.makeConstraints { make in
             make.right.equalTo(humidityLabel.snp.left)
             make.bottom.equalTo(humidityLabel.snp.bottom)
@@ -205,11 +224,11 @@ class CurrentCell: UITableViewCell {
             make.width.equalTo(humidityIcon.snp.height)
         }
     }
-    
+
     private func configWind() {
         containerView.addSubview(windLabel)
         containerView.addSubview(windIcon)
-        
+
         windLabel.snp.makeConstraints { make in
             make.left.equalTo(contentView.center.x / 2)
             make.top.equalTo(humidityLabel.snp.bottom).offset(15)

@@ -21,7 +21,7 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
     var dataService: DataService?
     
     var entity: BasicEntity?
-        
+    
     var isConnected = false
     
     func locationAccess() {
@@ -29,28 +29,25 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-
+    
     private func configEntity(with mapped: WeatherResponse, model: WeatherModel) {
-        let city = model.city
-        let icon = mapped.current.weather.first?.icon ?? ""
-        let temp = "\(Int(mapped.current.temp))°"
-        let wind = " : \(Int(mapped.current.wind_speed)) m/s"
-        let humidity = " : \(Int(mapped.current.humidity))%"
-        let descript = mapped.current.weather.first?.main ?? ""
-        let sunrise = dateFormatterService.dateFormater(dt: mapped.current.sunrise, format: " HH:mm")
-        let sunset = dateFormatterService.dateFormater(dt: mapped.current.sunset, format: " HH:mm")
-        let feelsLike = "Feels like: \(Int(mapped.current.feels_like))°"
-        let entity = BasicEntity(city: city,
-                                icon: icon,
-                                temp: temp,
-                                descript: descript,
-                                humidity: humidity,
-                                wind: wind,
-                                sunrise: sunrise,
-                                sunset: sunset,
-                                feelsLike: feelsLike,
-                                hourly: mapped.hourly,
-                                daily: mapped.daily)
+        let path = mapped.current
+        let sunrise = dateFormatterService.dateFormater(dt: path.sunrise, format: " HH:mm")
+        let sunset = dateFormatterService.dateFormater(dt: path.sunset, format: " HH:mm")
+        let entity = BasicEntity(city: model.city,
+                                 icon: path.weatherIcon,
+                                 temp: path.currentTemp,
+                                 descript: path.weatherDescr,
+                                 humidity: path.currentHumidity,
+                                 wind: path.currentWindSpeed,
+                                 wind_deg: path.currentWindDeg,
+                                 sunrise: sunrise,
+                                 sunset: sunset,
+                                 feelsLike: path.currentFeelLike,
+                                 pressure:path.currentPressure,
+                                 visibility: path.currentVisibility,
+                                 hourly: mapped.hourly,
+                                 daily: mapped.daily)
         if !entity.city.isEmpty {
             saveEntity(entity: entity)
             output?.updateEntity(entity: entity)
