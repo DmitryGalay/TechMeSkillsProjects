@@ -61,6 +61,8 @@
 		32C4AD4227A590EA00EA2F32 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD4127A590EA00EA2F32 /* Daily.swift */; };
 		32C4AD4427A590FE00EA2F32 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD4327A590FE00EA2F32 /* Temp.swift */; };
 		32C4AD4627A5910F00EA2F32 /* DailyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD4527A5910F00EA2F32 /* DailyIcon.swift */; };
+		32C4AD7127A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD6F27A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld */; };
+		32E78B0727A6A813004C93CF /* ConteinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E78B0627A6A813004C93CF /* ConteinerViewController.swift */; };
 		88060C55C64216BFC5911F13 /* Pods_Weather_AppViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686F0A643D2327C049E112B9 /* Pods_Weather_AppViper.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		32C4AD4127A590EA00EA2F32 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		32C4AD4327A590FE00EA2F32 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		32C4AD4527A5910F00EA2F32 /* DailyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIcon.swift; sourceTree = "<group>"; };
+		32C4AD7027A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherDataBase.xcdatamodel; sourceTree = "<group>"; };
+		32E78B0627A6A813004C93CF /* ConteinerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteinerViewController.swift; sourceTree = "<group>"; };
 		686F0A643D2327C049E112B9 /* Pods_Weather_AppViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_AppViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5435BD339BEB1B73AF00A67 /* Pods-Weather_AppViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_AppViper.release.xcconfig"; path = "Target Support Files/Pods-Weather_AppViper/Pods-Weather_AppViper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +163,7 @@
 		3255B32A27A1A8CF005E5AB4 /* Weather_AppViper */ = {
 			isa = PBXGroup;
 			children = (
+				32E78B0627A6A813004C93CF /* ConteinerViewController.swift */,
 				3255B3AB27A1DF8D005E5AB4 /* Extensions */,
 				3255B37827A1AE8B005E5AB4 /* Model */,
 				3255B34B27A1A914005E5AB4 /* Modul */,
@@ -171,6 +176,7 @@
 				3255B33427A1A8D3005E5AB4 /* Assets.xcassets */,
 				3255B33627A1A8D3005E5AB4 /* LaunchScreen.storyboard */,
 				3255B33927A1A8D3005E5AB4 /* Info.plist */,
+				32C4AD6F27A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld */,
 			);
 			path = Weather_AppViper;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 				3255B35827A1A914005E5AB4 /* LocationServiceImp.swift in Sources */,
 				32C4AD3627A58F7400EA2F32 /* Extension+Model.swift in Sources */,
 				32C4AD3A27A5908600EA2F32 /* Current.swift in Sources */,
+				32E78B0727A6A813004C93CF /* ConteinerViewController.swift in Sources */,
 				3255B38427A1AFCC005E5AB4 /* WeatherInteractor.swift in Sources */,
 				3255B36D27A1AD3A005E5AB4 /* SearchRouterImp.swift in Sources */,
 				3255B36327A1AA31005E5AB4 /* SearchViewController.swift in Sources */,
@@ -595,6 +602,7 @@
 				32C4AD3C27A5909D00EA2F32 /* Weather.swift in Sources */,
 				3255B37127A1AD9C005E5AB4 /* SearchInteractorImp.swift in Sources */,
 				32C4AD4027A590D000EA2F32 /* HourlyIcon.swift in Sources */,
+				32C4AD7127A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld in Sources */,
 				3255B3A427A1B364005E5AB4 /* WeekCell.swift in Sources */,
 				3255B38E27A1B0B0005E5AB4 /* WeatherEntity.swift in Sources */,
 				3255B38A27A1B02A005E5AB4 /* WeatherRouterImp.swift in Sources */,
@@ -822,6 +830,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32C4AD6F27A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32C4AD7027A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodel */,
+			);
+			currentVersion = 32C4AD7027A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodel */;
+			path = WeatherDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3255B32027A1A8CF005E5AB4 /* Project object */;
 }

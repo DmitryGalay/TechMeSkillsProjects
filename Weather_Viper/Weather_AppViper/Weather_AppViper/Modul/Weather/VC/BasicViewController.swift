@@ -6,6 +6,7 @@
 
 import UIKit
 import SnapKit
+import Jelly
 
 class BasicViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class BasicViewController: UIViewController {
     let buttonShowSearch = UIButton()
     
     var presenter: BasicPresenterInput!
+    var animator: Jelly.Animator?
     
     var basicEntity: BasicEntity?
     let iconsDic = BasicIconsEntity()
@@ -149,7 +151,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyCell.identifier, for: indexPath) as? HourlyCell else { return UITableViewCell() }
-            cell.backgroundColor = .blue
+            cell.backgroundColor = .clear
             cell.setTemp = { [weak self] cell, index in
                 self?.setHourlyCells(cell: cell, indexPath: index)
             }

@@ -23,19 +23,19 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 25
+        view.backgroundColor = .clear
         presenter.viewIsReady()
         config()
     }
     
     private func config() {
-      
         configSearch()
     }
 
     private func configSearch() {
         search.delegate = self
-        search.backgroundColor = .clear
+        search.layer.cornerRadius = 25
         
 
     }
