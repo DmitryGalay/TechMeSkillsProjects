@@ -44,7 +44,9 @@ extension HourlyCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeekCell.identifier, for: indexPath) as? WeekCell else { return UICollectionViewCell() }
         cell.configCell()
-        cell.backgroundColor = .clear
+        cell.backgroundColor = UIColor(named: "ParamColor")
+        cell.layer.cornerRadius = 25
+//        cell.backgroundColor = .clear
         setTemp?(cell, indexPath)
         
         return cell

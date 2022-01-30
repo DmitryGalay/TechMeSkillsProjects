@@ -15,13 +15,13 @@ class BasicViewController: UIViewController {
     let buttonShowSearch = UIButton()
     
     var presenter: BasicPresenterInput!
-    var animator: Jelly.Animator?
     
     var basicEntity: BasicEntity?
     let iconsDic = BasicIconsEntity()
+    let backgroundEntity = BasicBackgroundEntity()
     
     var dateFormatterService: DateFormatterService!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewIsReady()
@@ -29,6 +29,7 @@ class BasicViewController: UIViewController {
     }
     
     private func config() {
+        setBackgroundImage()
         configTableView()
         configButton()
     }
@@ -60,17 +61,34 @@ class BasicViewController: UIViewController {
     private func configButton() {
         let plusIcon = UIImage(systemName: "location.magnifyingglass")
         plusIcon?.withTintColor(UIColor.black)
-
+        
         view.addSubview(buttonShowSearch)
-
+        
         buttonShowSearch.setBackgroundImage(plusIcon, for: .normal)
-        buttonShowSearch.tintColor = .white
+        buttonShowSearch.tintColor = UIColor(named: "MainColor")
         buttonShowSearch.addTarget(self, action: #selector(actionShowSearchScreen), for: .touchUpInside)
-
+        
         buttonShowSearch.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
             make.size.equalTo(25)
             make.right.equalToSuperview().inset(35)
+        }
+    }
+    
+    private func setBackgroundImage() {
+        let iconName = basicEntity?.icon
+        for images in backgroundEntity.backgroundEntity {
+            if iconName == images.key {
+                let background = UIImage(named: images.value)
+                var imageView : UIImageView!
+                imageView = UIImageView(frame: view.bounds)
+                imageView.contentMode =  .scaleAspectFill
+                imageView.clipsToBounds = true
+                imageView.image = background
+                imageView.center = view.center
+                view.addSubview(imageView)
+                self.view.sendSubviewToBack(imageView)
+            }
         }
     }
     
@@ -118,14 +136,13 @@ class BasicViewController: UIViewController {
     
     @objc func actionShowSearchScreen() {
         presenter.showSearchScreen()
-        print(basicEntity?.daily.count)
     }
 }
 
 extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return basicEntity?.daily.count ?? 0
-}
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
@@ -140,7 +157,8 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ParamCell.identifier, for: indexPath) as? ParamCell else { return UITableViewCell() }
-            cell.backgroundColor = .clear
+            cell.backgroundColor = UIColor(named: "ParamColor")
+            cell.layer.cornerRadius = 25
             cell.humidityLabel.text = basicEntity?.humidity
             cell.windDegLabel.text = basicEntity?.wind_deg
             cell.windLabel.text = basicEntity?.wind
@@ -152,6 +170,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyCell.identifier, for: indexPath) as? HourlyCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
+           
             cell.setTemp = { [weak self] cell, index in
                 self?.setHourlyCells(cell: cell, indexPath: index)
             }
@@ -159,7 +178,9 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyCell.indetifier, for: indexPath) as? DailyCell else { return UITableViewCell() }
-            cell.backgroundColor = .clear
+//            cell.backgroundColor = .clear
+            cell.backgroundColor = UIColor(named: "ParamColor")
+            cell.layer.cornerRadius = 25
             cell.dayOfWeekLabel.text = setDayOfWeek(indexPath: indexPath)
             cell.iconImageView.image = setIcon(indexPath: indexPath)
             cell.minTempLabel.text = setMinTemp(indexPath: indexPath)
@@ -171,6 +192,10 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BasicViewController: BasicPresenterOutput {
+    func setBackgroud(fileName: String, color: String) {
+        print("123")
+    }
+    
     func setState(with entity: BasicEntity) {
         basicEntity = entity
         tableView.reloadData()

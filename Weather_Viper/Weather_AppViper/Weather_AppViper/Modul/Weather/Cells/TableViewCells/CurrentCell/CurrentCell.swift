@@ -23,7 +23,7 @@ class CurrentCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 45, weight: .medium)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         text.numberOfLines = 0
         return text
     }()
@@ -32,7 +32,7 @@ class CurrentCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -40,7 +40,7 @@ class CurrentCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 120, weight: .thin)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -48,14 +48,14 @@ class CurrentCell: UITableViewCell {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
     var humidityIcon: UIImageView = {
        let icon = UIImageView()
         icon.image = UIImage(systemName: "humidity.fill")
-        icon.tintColor = .white
+        icon.tintColor = UIColor(named: "MainColor")
         icon.contentMode = .scaleAspectFit
         return icon
     }()
@@ -64,14 +64,14 @@ class CurrentCell: UITableViewCell {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
     var windIcon: UIImageView = {
        let icon = UIImageView()
         icon.image = UIImage(systemName: "wind")
-        icon.tintColor = .white
+        icon.tintColor = UIColor(named: "MainColor")
         icon.contentMode = .scaleAspectFit
         return icon
     }()
@@ -79,7 +79,7 @@ class CurrentCell: UITableViewCell {
     var windLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
 
@@ -93,7 +93,7 @@ class CurrentCell: UITableViewCell {
     var sunriseLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
 
@@ -107,13 +107,13 @@ class CurrentCell: UITableViewCell {
     var sunsetLabel: UILabel = {
        let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
     var iconImageView: UIImageView = {
        let icon = UIImageView()
-        icon.tintColor = .white
+        icon.tintColor = UIColor(named: "MainColor")
         icon.contentMode = .scaleAspectFit
         return icon
     }()

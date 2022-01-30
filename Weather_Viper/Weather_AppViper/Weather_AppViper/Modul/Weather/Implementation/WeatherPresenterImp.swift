@@ -28,6 +28,10 @@ extension BasicPresenterImp: BasicInteractorOuput {
     func updateEntity(entity: BasicEntity) {
         view?.setState(with: entity)
     }
+    
+    func updateBackgroud(fileName: String, color: String) {
+        view?.setBackgroud(fileName: fileName, color: color)
+    }
 }
 extension BasicPresenterImp: ModuleOuput {
     func didUpdateModel(model: WeatherModel) {

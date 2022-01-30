@@ -24,7 +24,7 @@ class DailyCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -33,7 +33,7 @@ class DailyCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -41,7 +41,7 @@ class DailyCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -49,13 +49,13 @@ class DailyCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
     var iconImageView: UIImageView = {
        let icon = UIImageView()
-        icon.tintColor = .white
+        icon.tintColor = UIColor(named: "MainColor")
         icon.contentMode = .scaleAspectFit
         return icon
     }()
@@ -79,7 +79,8 @@ class DailyCell: UITableViewCell {
             make.left.right.equalToSuperview()
             make.top.bottom.equalToSuperview()
         }
-        containerView.backgroundColor = .black
+        containerView.backgroundColor = .clear
+        
     }
     
     private func configTimeLabel() {

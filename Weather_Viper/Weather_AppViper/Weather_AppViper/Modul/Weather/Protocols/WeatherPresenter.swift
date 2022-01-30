@@ -14,4 +14,5 @@ protocol BasicPresenterInput {
 
 protocol BasicPresenterOutput: AnyObject {
     func setState(with entity: BasicEntity)
+    func setBackgroud(fileName: String, color: String)
 }

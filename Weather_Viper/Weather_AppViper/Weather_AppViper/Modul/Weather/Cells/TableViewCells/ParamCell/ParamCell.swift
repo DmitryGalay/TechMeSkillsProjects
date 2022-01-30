@@ -29,14 +29,14 @@ class ParamCell: UITableViewCell {
     var windLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
     var windDegLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -52,7 +52,7 @@ class ParamCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -60,7 +60,7 @@ class ParamCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -76,7 +76,7 @@ class ParamCell: UITableViewCell {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         text.textAlignment = .center
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -98,7 +98,7 @@ class ParamCell: UITableViewCell {
     var sunriseLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -112,7 +112,7 @@ class ParamCell: UITableViewCell {
     var sunsetLabel: UILabel = {
         let text = UILabel()
         text.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        text.textColor = .white
+        text.textColor = UIColor(named: "MainColor")
         return text
     }()
     
@@ -141,7 +141,8 @@ class ParamCell: UITableViewCell {
             make.left.right.equalToSuperview()
             make.top.bottom.equalToSuperview()
         }
-        containerView.backgroundColor = .black
+        containerView.backgroundColor = .clear
+        
     }
     
     private func configHumidity() {

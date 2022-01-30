@@ -17,7 +17,7 @@ class WeekCell: UICollectionViewCell {
     let hours: UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        textLabel.textColor = .white
+        textLabel.textColor = UIColor(named: "MainColor")
         textLabel.textAlignment = .center
         return textLabel
     }()
@@ -31,7 +31,7 @@ class WeekCell: UICollectionViewCell {
     let temperature: UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont.systemFont(ofSize: 18,weight: .medium)
-        textLabel.textColor = .white
+        textLabel.textColor = UIColor(named: "MainColor")
         textLabel.textAlignment = .center
         return textLabel
     }()
