@@ -10,7 +10,6 @@
 		3254786827958279003AE764 /* MainTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254786727958278003AE764 /* MainTemp.swift */; };
 		3254786A279586D1003AE764 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32547869279586D1003AE764 /* DailyWeatherView.swift */; };
 		3254786C27958B6F003AE764 /* DaysTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254786B27958B6F003AE764 /* DaysTemp.swift */; };
-		3254786E27958C38003AE764 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254786D27958C38003AE764 /* CornerRadius.swift */; };
 		328DDE54279320C30007464C /* SwiftUIProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DDE53279320C30007464C /* SwiftUIProjectsApp.swift */; };
 		328DDE56279320C30007464C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DDE55279320C30007464C /* ContentView.swift */; };
 		328DDE58279320C70007464C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328DDE57279320C70007464C /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 		3254786727958278003AE764 /* MainTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemp.swift; sourceTree = "<group>"; };
 		32547869279586D1003AE764 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		3254786B27958B6F003AE764 /* DaysTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTemp.swift; sourceTree = "<group>"; };
-		3254786D27958C38003AE764 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		328DDE50279320C30007464C /* SwiftUIProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		328DDE53279320C30007464C /* SwiftUIProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIProjectsApp.swift; sourceTree = "<group>"; };
 		328DDE55279320C30007464C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 				3254786727958278003AE764 /* MainTemp.swift */,
 				32547869279586D1003AE764 /* DailyWeatherView.swift */,
 				3254786B27958B6F003AE764 /* DaysTemp.swift */,
-				3254786D27958C38003AE764 /* CornerRadius.swift */,
 				328DDE57279320C70007464C /* Assets.xcassets */,
 				328DDE59279320C70007464C /* Preview Content */,
 			);
@@ -151,7 +148,6 @@
 			files = (
 				328DDE56279320C30007464C /* ContentView.swift in Sources */,
 				328DDE54279320C30007464C /* SwiftUIProjectsApp.swift in Sources */,
-				3254786E27958C38003AE764 /* CornerRadius.swift in Sources */,
 				3254786827958279003AE764 /* MainTemp.swift in Sources */,
 				3254786A279586D1003AE764 /* DailyWeatherView.swift in Sources */,
 				3254786C27958B6F003AE764 /* DaysTemp.swift in Sources */,

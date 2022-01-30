@@ -12,17 +12,19 @@ struct DailyWeatherView: View {
     let day: String
     let temp: String
     let myWidth: CGFloat
+    let spacerWidth: CGFloat
+    let mainSpacerWight: CGFloat
     
     var body: some View {
         HStack {
-            Spacer().frame(width: myWidth / 2 )
+            Spacer().frame(width: mainSpacerWight )
             Image(imageName)
             Text(day)
                 .font(.body)
                 .fontWeight(.medium)
                 .foregroundColor(Color.black)
                 .frame(width: myWidth, height: 30, alignment: .leading)
-            Spacer()
+            Spacer().frame(width: spacerWidth )
             Text(temp)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black)
