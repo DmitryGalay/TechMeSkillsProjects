@@ -31,6 +31,7 @@ final class BasicRouterImp: BasicRouterInput {
         animator = Animator(presentation:presentation)
         guard let view = view, let controller = SearchAssembly.configSearchModule(output: ouput) else { return }
         animator?.prepare(presentedViewController: controller)
+        
         view.present(controller, animated: true, completion: nil)
         //view.present(controller, animated: true)
     }
