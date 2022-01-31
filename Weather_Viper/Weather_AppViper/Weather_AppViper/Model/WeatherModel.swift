@@ -4,8 +4,6 @@
 //
 //  Created by Dima on 26.01.22.
 //
-
-import Foundation
 import Foundation
 import CoreLocation
 

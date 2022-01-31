@@ -15,6 +15,7 @@ class SearchAssembly {
         let presenter = SearchPresenterImp()
         let interactor = SearchInteractorImp()
         let router = SearchRouterImp()
+        //let backgroudService = BackgroundServiceImp()
         
         let weatherDataService = WeatherServiceImp()
         let locationService = LocationServiceImp()
@@ -28,6 +29,7 @@ class SearchAssembly {
         interactor.weatherDataService = weatherDataService
         interactor.locationService = locationService
         interactor.storageService = storageService
+       // interactor.backgroudService = backgroudService
         
         controller.presenter = presenter
         router.view = controller

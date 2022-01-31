@@ -16,4 +16,5 @@ protocol BasicInteractorInput {
 
 protocol BasicInteractorOuput: AnyObject {
     func updateEntity(entity: BasicEntity)
+    func updateBackgroud(name: String)
 }

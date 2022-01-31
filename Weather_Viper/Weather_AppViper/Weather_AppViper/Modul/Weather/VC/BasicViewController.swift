@@ -12,6 +12,7 @@ class BasicViewController: UIViewController {
     
     var timer = Timer()
     let tableView = UITableView()
+    var imageView = UIImageView()
     let buttonShowSearch = UIButton()
     
     var presenter: BasicPresenterInput!
@@ -29,7 +30,6 @@ class BasicViewController: UIViewController {
     }
     
     private func config() {
-        setBackgroundImage()
         configTableView()
         configButton()
     }
@@ -75,22 +75,16 @@ class BasicViewController: UIViewController {
         }
     }
     
-    private func setBackgroundImage() {
-        let iconName = basicEntity?.icon
-        for images in backgroundEntity.backgroundEntity {
-            if iconName == images.key {
-                let background = UIImage(named: images.value)
-                var imageView : UIImageView!
+    private func setBackgroundImage(name: String) {
                 imageView = UIImageView(frame: view.bounds)
                 imageView.contentMode =  .scaleAspectFill
                 imageView.clipsToBounds = true
-                imageView.image = background
+                imageView.image = UIImage(named: name)
                 imageView.center = view.center
                 view.addSubview(imageView)
                 self.view.sendSubviewToBack(imageView)
             }
-        }
-    }
+        
     
     private func setHourlyCells(cell: WeekCell, indexPath: IndexPath) {
         let dt = basicEntity?.hourly[indexPath.row].dt ?? 0
@@ -108,13 +102,13 @@ class BasicViewController: UIViewController {
     }
     
     private func setDayOfWeek(indexPath: IndexPath) -> String {
-        guard let dt = (basicEntity?.daily[indexPath.row].dt) else { return "" }
+        guard let dt = (basicEntity?.daily[indexPath.row - 2].dt) else { return "" }
         let date = dateFormatterService.dateFormater(dt: dt, format: "EEEE")
         return date
     }
     
     private func setIcon(indexPath: IndexPath) -> UIImage? {
-        let iconName = basicEntity?.daily[indexPath.row].weather.first?.icon ?? ""
+        let iconName = basicEntity?.daily[indexPath.row - 2].weather[0].icon
         for icons in iconsDic.iconsDic {
             if iconName == icons.key {
                 let icon = UIImage(systemName: icons.value)?.withRenderingMode(.alwaysOriginal)
@@ -125,12 +119,12 @@ class BasicViewController: UIViewController {
     }
     
     private func setMinTemp(indexPath: IndexPath) -> String {
-        let minTemp = "\(Int(basicEntity?.daily[indexPath.row].temp.min ?? 0))°"
+        let minTemp = "\(Int(basicEntity?.daily[indexPath.row - 2].temp.min ?? 0))°"
         return minTemp
     }
     
     private func setMaxTemp(indexPath: IndexPath) -> String {
-        let maxTemp = "\(Int(basicEntity?.daily[indexPath.row].temp.max ?? 0))°"
+        let maxTemp = "\(Int(basicEntity?.daily[indexPath.row - 2].temp.max ?? 0))°"
         return maxTemp
     }
     
@@ -141,7 +135,8 @@ class BasicViewController: UIViewController {
 
 extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return basicEntity?.daily.count ?? 0
+        let count = basicEntity?.daily.count ?? 0
+        return count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -149,10 +144,15 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrentCell.identifier, for: indexPath) as? CurrentCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
+            guard let forecast = basicEntity?.daily else { return UITableViewCell() }
+            let daily = forecast[indexPath.row]
+            let icon = daily.weather[0].icon
+            guard let unwrapIcon = iconsDic.iconsDic[icon] else { return UITableViewCell() }
+            cell.iconImageView.image = UIImage(systemName: unwrapIcon)
             cell.cityName.text = basicEntity?.city
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
-            cell.iconImageView.image = setIcon(indexPath: indexPath)
+           
             cell.feelsLikeLabel.text = basicEntity?.feelsLike
             return cell
         case 1:
@@ -192,8 +192,8 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BasicViewController: BasicPresenterOutput {
-    func setBackgroud(fileName: String, color: String) {
-        print("123")
+    func loadBackground(backgroundName: String) {
+        setBackgroundImage(name: backgroundName)
     }
     
     func setState(with entity: BasicEntity) {

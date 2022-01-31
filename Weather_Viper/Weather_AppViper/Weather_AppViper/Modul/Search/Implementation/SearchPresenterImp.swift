@@ -8,6 +8,10 @@
 import Foundation
 
 final class SearchPresenterImp: SearchPresenterInput {
+    func checkConnection() {
+        interactor.checkConnection()
+    }
+    
     
     weak var view: SearchPresenterOuput?
     var interactor: SearchInteractorInput!
@@ -15,12 +19,13 @@ final class SearchPresenterImp: SearchPresenterInput {
     weak var output: ModuleOuput?
     
         
-    func viewIsReady() {
-        interactor.configEntity()
-    }
+//    func viewIsReady() {
+//        interactor.configEntity()
+//    }
     
     func didChooseCity(city: String) {
         interactor.didChooseCityFromSearch(city: city)
+        
     }
     func dismissSearch() {
         router.dismissSearch(output: self)
@@ -28,19 +33,23 @@ final class SearchPresenterImp: SearchPresenterInput {
 }
 
 extension SearchPresenterImp: SearchInteractorOuput {
+    func updateBackgroud(name: String) {
+        view!.loadBackground(backgroundName: name)
+    }
+    
     func updateModel(with model: WeatherModel) {
         output?.didUpdateModel(model: model)
     }
-    func updateEntity(with entity: SearchEntity) {
-        view?.setStateWithEntity(with: entity)
-    }
+//    func updateEntity(with entity: SearchEntity) {
+//        view?.setStateWithEntity(with: entity)
+//    }
 
 }
 
-extension SearchPresenterImp: DataServiceDelegate {
-    func updateEntity(with entity: BasicEntity) {
-    }
-}
+//extension SearchPresenterImp: DataServiceDelegate {
+//    func updateEntity(with entity: BasicEntity) {
+//    }
+//}
 
 extension SearchPresenterImp: ModuleOuput {
     func didUpdateModel(model: WeatherModel) {

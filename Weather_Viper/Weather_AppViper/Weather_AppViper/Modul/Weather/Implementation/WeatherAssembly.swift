@@ -22,10 +22,13 @@ class BasicAssembly {
         let weatherService = WeatherServiceImp()
         let storageService = SharedStorageImp()
         let dateFormatterService = DateFormatterServiceImp()
+        let backgroudService = BackgroundServiceImp()
         
         presenter.router = router
         presenter.interactor = interactor
         presenter.view = controller
+        
+        
         
         interactor.output = presenter
         
@@ -33,10 +36,12 @@ class BasicAssembly {
         interactor.weatherService = weatherService
         interactor.storageService = storageService
         interactor.dateFormatterService = dateFormatterService
+        interactor.backgroudService = backgroudService
+
        
         
         controller.dateFormatterService = dateFormatterService
-
+        
         controller.presenter = presenter
         router.view = controller
         

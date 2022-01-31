@@ -8,6 +8,8 @@
 import Foundation
 
 final class BasicPresenterImp: BasicPresenterInput, ModuleInput {
+    var entity: BasicEntity?
+    
     internal var model: WeatherModel?
     
     weak var view: BasicPresenterOutput?
@@ -17,7 +19,6 @@ final class BasicPresenterImp: BasicPresenterInput, ModuleInput {
     func viewIsReady() {
         interactor.locationAccess()
         interactor.checkConnection()
-       
     }
     
     func showSearchScreen() {
@@ -25,13 +26,14 @@ final class BasicPresenterImp: BasicPresenterInput, ModuleInput {
     }
 }
 extension BasicPresenterImp: BasicInteractorOuput {
+    func updateBackgroud(name: String) {
+        view?.loadBackground(backgroundName:name)
+    }
+    
     func updateEntity(entity: BasicEntity) {
         view?.setState(with: entity)
     }
     
-    func updateBackgroud(fileName: String, color: String) {
-        view?.setBackgroud(fileName: fileName, color: color)
-    }
 }
 extension BasicPresenterImp: ModuleOuput {
     func didUpdateModel(model: WeatherModel) {

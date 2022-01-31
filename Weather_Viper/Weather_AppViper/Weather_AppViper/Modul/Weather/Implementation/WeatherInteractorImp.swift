@@ -14,6 +14,8 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
     var weatherService: WeatherService!
     var storageService: SharedStorage!
     var dateFormatterService: DateFormatterService!
+    var backgroudService: BackgroundService!
+    
     
     var locationManager = CLLocationManager()
     var currentLocation = CLLocation()
@@ -51,6 +53,8 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         if !entity.city.isEmpty {
             saveEntity(entity: entity)
             output?.updateEntity(entity: entity)
+            output?.updateBackgroud(name: backgroudService.backgroudBasic(entity: entity))
+            
         }
     }
     
@@ -64,6 +68,7 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         if !isConnected {
             guard let entity = getEntity() else { return }
             output?.updateEntity(entity: entity)
+            output?.updateBackgroud(name: backgroudService.backgroudBasic(entity: entity))
         }
     }
     

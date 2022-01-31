@@ -64,6 +64,8 @@
 		32C4AD7127A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32C4AD6F27A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodeld */; };
 		32E78B0927A6C5FA004C93CF /* BasicBackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E78B0827A6C5FA004C93CF /* BasicBackgroundEntity.swift */; };
 		32E78B0B27A70C15004C93CF /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E78B0A27A70C14004C93CF /* Extension+UIImageView.swift */; };
+		32E78B0F27A71EEB004C93CF /* BackgroundServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E78B0E27A71EEA004C93CF /* BackgroundServiceImp.swift */; };
+		32E78B1127A71EFD004C93CF /* BackgroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E78B1027A71EFD004C93CF /* BackgroundService.swift */; };
 		88060C55C64216BFC5911F13 /* Pods_Weather_AppViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686F0A643D2327C049E112B9 /* Pods_Weather_AppViper.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		32C4AD7027A5EFAA00EA2F32 /* WeatherDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherDataBase.xcdatamodel; sourceTree = "<group>"; };
 		32E78B0827A6C5FA004C93CF /* BasicBackgroundEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBackgroundEntity.swift; sourceTree = "<group>"; };
 		32E78B0A27A70C14004C93CF /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		32E78B0E27A71EEA004C93CF /* BackgroundServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundServiceImp.swift; sourceTree = "<group>"; };
+		32E78B1027A71EFD004C93CF /* BackgroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundService.swift; sourceTree = "<group>"; };
 		686F0A643D2327C049E112B9 /* Pods_Weather_AppViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_AppViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5435BD339BEB1B73AF00A67 /* Pods-Weather_AppViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_AppViper.release.xcconfig"; path = "Target Support Files/Pods-Weather_AppViper/Pods-Weather_AppViper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +203,7 @@
 				3255B34327A1A914005E5AB4 /* LocationServiceImp.swift */,
 				3255B34427A1A914005E5AB4 /* DataServiceImp.swift */,
 				3255B34527A1A914005E5AB4 /* DateFormatterServiceImp.swift */,
+				32E78B0E27A71EEA004C93CF /* BackgroundServiceImp.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				3255B34827A1A914005E5AB4 /* WeatherService.swift */,
 				3255B34927A1A914005E5AB4 /* SharedStorage.swift */,
 				3255B34A27A1A914005E5AB4 /* LocationService.swift */,
+				32E78B1027A71EFD004C93CF /* BackgroundService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -586,6 +592,7 @@
 				3255B38427A1AFCC005E5AB4 /* WeatherInteractor.swift in Sources */,
 				3255B36D27A1AD3A005E5AB4 /* SearchRouterImp.swift in Sources */,
 				3255B36327A1AA31005E5AB4 /* SearchViewController.swift in Sources */,
+				32E78B1127A71EFD004C93CF /* BackgroundService.swift in Sources */,
 				3255B32C27A1A8CF005E5AB4 /* AppDelegate.swift in Sources */,
 				3255B36727A1ACB8005E5AB4 /* SearchEntity.swift in Sources */,
 				3255B39E27A1B2C1005E5AB4 /* DailyCell.swift in Sources */,
@@ -611,6 +618,7 @@
 				3255B38E27A1B0B0005E5AB4 /* WeatherEntity.swift in Sources */,
 				3255B38A27A1B02A005E5AB4 /* WeatherRouterImp.swift in Sources */,
 				3255B38627A1AFD8005E5AB4 /* WeatherInteractorImp.swift in Sources */,
+				32E78B0F27A71EEB004C93CF /* BackgroundServiceImp.swift in Sources */,
 				3255B37A27A1AEA9005E5AB4 /* WeatherModel.swift in Sources */,
 				3255B37327A1ADF9005E5AB4 /* SearchPresenter.swift in Sources */,
 			);

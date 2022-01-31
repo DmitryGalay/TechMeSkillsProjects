@@ -56,7 +56,7 @@ extension HourlyCell: UICollectionViewDataSource {
 
 extension HourlyCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        15
+        10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: contentView.frame.width / 4.8, height: collectionView.frame.height - 30)

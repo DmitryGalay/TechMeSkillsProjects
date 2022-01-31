@@ -11,9 +11,12 @@ protocol SearchPresenterInput {
     var view: SearchPresenterOuput? { get set }
     func didChooseCity(city: String)
     func dismissSearch()
-    func viewIsReady()
+    func checkConnection()
+    
+   // func viewIsReady()
 }
 
 protocol SearchPresenterOuput: AnyObject {
-    func setStateWithEntity(with entity: SearchEntity)
+//    func setStateWithEntity(with entity: SearchEntity)
+    func loadBackground(backgroundName: String)
 }

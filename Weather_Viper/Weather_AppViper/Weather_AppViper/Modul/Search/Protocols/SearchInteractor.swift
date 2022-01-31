@@ -10,10 +10,12 @@ import CoreLocation
 protocol SearchInteractorInput {
     var output: SearchInteractorOuput? { get set }
     func didChooseCityFromSearch(city: String)
-    func configEntity()
+    func checkConnection()
+   // func configEntity()
 }
 
 protocol SearchInteractorOuput: AnyObject {
     func updateModel(with model: WeatherModel)
-    func updateEntity(with entity: SearchEntity)
+    func updateBackgroud(name: String)
+   // func updateEntity(with entity: SearchEntity)
 }
