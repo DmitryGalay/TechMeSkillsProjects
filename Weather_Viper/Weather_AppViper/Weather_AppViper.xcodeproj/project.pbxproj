@@ -26,11 +26,11 @@
 		3255B37727A1AE65005E5AB4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B37627A1AE65005E5AB4 /* Module.swift */; };
 		3255B37A27A1AEA9005E5AB4 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B37927A1AEA9005E5AB4 /* WeatherModel.swift */; };
 		3255B37E27A1AEFA005E5AB4 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B37D27A1AEFA005E5AB4 /* BasicViewController.swift */; };
-		3255B38027A1AF56005E5AB4 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B37F27A1AF56005E5AB4 /* WeatherPresenter.swift */; };
+		3255B38027A1AF56005E5AB4 /* BasicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B37F27A1AF56005E5AB4 /* BasicPresenter.swift */; };
 		3255B38227A1AF69005E5AB4 /* BasicPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38127A1AF69005E5AB4 /* BasicPresenterImp.swift */; };
-		3255B38427A1AFCC005E5AB4 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38327A1AFCC005E5AB4 /* WeatherInteractor.swift */; };
+		3255B38427A1AFCC005E5AB4 /* BasicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38327A1AFCC005E5AB4 /* BasicInteractor.swift */; };
 		3255B38627A1AFD8005E5AB4 /* BasicInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38527A1AFD8005E5AB4 /* BasicInteractorImp.swift */; };
-		3255B38827A1B01D005E5AB4 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38727A1B01D005E5AB4 /* WeatherRouter.swift */; };
+		3255B38827A1B01D005E5AB4 /* BasicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38727A1B01D005E5AB4 /* BasicRouter.swift */; };
 		3255B38A27A1B02A005E5AB4 /* BasicRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38927A1B02A005E5AB4 /* BasicRouterImp.swift */; };
 		3255B38C27A1B06C005E5AB4 /* BasicAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38B27A1B06C005E5AB4 /* BasicAssembly.swift */; };
 		3255B38E27A1B0B0005E5AB4 /* BasicEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255B38D27A1B0B0005E5AB4 /* BasicEntity.swift */; };
@@ -84,11 +84,11 @@
 		3255B37627A1AE65005E5AB4 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		3255B37927A1AEA9005E5AB4 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		3255B37D27A1AEFA005E5AB4 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
-		3255B37F27A1AF56005E5AB4 /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
+		3255B37F27A1AF56005E5AB4 /* BasicPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenter.swift; sourceTree = "<group>"; };
 		3255B38127A1AF69005E5AB4 /* BasicPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenterImp.swift; sourceTree = "<group>"; };
-		3255B38327A1AFCC005E5AB4 /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
+		3255B38327A1AFCC005E5AB4 /* BasicInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInteractor.swift; sourceTree = "<group>"; };
 		3255B38527A1AFD8005E5AB4 /* BasicInteractorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInteractorImp.swift; sourceTree = "<group>"; };
-		3255B38727A1B01D005E5AB4 /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
+		3255B38727A1B01D005E5AB4 /* BasicRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicRouter.swift; sourceTree = "<group>"; };
 		3255B38927A1B02A005E5AB4 /* BasicRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicRouterImp.swift; sourceTree = "<group>"; };
 		3255B38B27A1B06C005E5AB4 /* BasicAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAssembly.swift; sourceTree = "<group>"; };
 		3255B38D27A1B0B0005E5AB4 /* BasicEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEntity.swift; sourceTree = "<group>"; };
@@ -226,9 +226,9 @@
 		3255B35127A1A914005E5AB4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3255B37F27A1AF56005E5AB4 /* WeatherPresenter.swift */,
-				3255B38327A1AFCC005E5AB4 /* WeatherInteractor.swift */,
-				3255B38727A1B01D005E5AB4 /* WeatherRouter.swift */,
+				3255B37F27A1AF56005E5AB4 /* BasicPresenter.swift */,
+				3255B38327A1AFCC005E5AB4 /* BasicInteractor.swift */,
+				3255B38727A1B01D005E5AB4 /* BasicRouter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -533,12 +533,12 @@
 				32C4AD3227A5685E00EA2F32 /* ParamCell.swift in Sources */,
 				3255B35627A1A914005E5AB4 /* WeatherServiceImp.swift in Sources */,
 				3255B35727A1A914005E5AB4 /* SharedStorageImp.swift in Sources */,
-				3255B38827A1B01D005E5AB4 /* WeatherRouter.swift in Sources */,
+				3255B38827A1B01D005E5AB4 /* BasicRouter.swift in Sources */,
 				3255B38227A1AF69005E5AB4 /* BasicPresenterImp.swift in Sources */,
 				3255B35827A1A914005E5AB4 /* LocationServiceImp.swift in Sources */,
 				32C4AD3627A58F7400EA2F32 /* Extension+Model.swift in Sources */,
 				32C4AD3A27A5908600EA2F32 /* Current.swift in Sources */,
-				3255B38427A1AFCC005E5AB4 /* WeatherInteractor.swift in Sources */,
+				3255B38427A1AFCC005E5AB4 /* BasicInteractor.swift in Sources */,
 				3255B36327A1AA31005E5AB4 /* SearchViewController.swift in Sources */,
 				32E78B1127A71EFD004C93CF /* BackgroundService.swift in Sources */,
 				3255B32C27A1A8CF005E5AB4 /* AppDelegate.swift in Sources */,
@@ -550,7 +550,7 @@
 				3255B3A227A1B343005E5AB4 /* HourlyCollectionView.swift in Sources */,
 				32E78B0B27A70C15004C93CF /* Extension+UIImageView.swift in Sources */,
 				3255B32E27A1A8CF005E5AB4 /* SceneDelegate.swift in Sources */,
-				3255B38027A1AF56005E5AB4 /* WeatherPresenter.swift in Sources */,
+				3255B38027A1AF56005E5AB4 /* BasicPresenter.swift in Sources */,
 				32C4AD3827A5906E00EA2F32 /* WeatherResponse.swift in Sources */,
 				3255B36027A1A914005E5AB4 /* Constants.swift in Sources */,
 				3255B35E27A1A914005E5AB4 /* LocationService.swift in Sources */,

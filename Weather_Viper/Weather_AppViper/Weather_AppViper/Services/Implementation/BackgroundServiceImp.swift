@@ -8,7 +8,6 @@
 import Foundation
 final class BackgroundServiceImp: BackgroundService {
     let backgroundEntity = BasicBackgroundEntity()
-    
     func backgroudBasic(entity: BasicEntity) -> String {
         for day in backgroundEntity.backgroundEntity{
             if entity.icon == day.key {

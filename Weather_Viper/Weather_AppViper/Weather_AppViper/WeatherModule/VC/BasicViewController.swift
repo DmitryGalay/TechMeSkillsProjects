@@ -9,18 +9,14 @@ import SnapKit
 import Jelly
 
 class BasicViewController: UIViewController {
-    
     var timer = Timer()
     let tableView = UITableView()
     var imageView = UIImageView()
     let buttonShowSearch = UIButton()
-    
     var presenter: BasicPresenterInput!
-    
     var basicEntity: BasicEntity?
     let iconsDic = BasicIconsEntity()
     let backgroundEntity = BasicBackgroundEntity()
-    
     var dateFormatterService: DateFormatterService!
     
     override func viewDidLoad() {
@@ -40,18 +36,19 @@ class BasicViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.allowsSelection = false
-        
+        tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(tableView)
-        
+        addTableCell()
         tableView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(80)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
         }
-        
-        tableView.dataSource = self
-        tableView.delegate = self
+    }
+    
+    private func addTableCell() {
         tableView.register(CurrentCell.nib(), forCellReuseIdentifier: CurrentCell.identifier)
         tableView.register(ParamCell.nib(), forCellReuseIdentifier: ParamCell.identifier)
         tableView.register(HourlyCell.nib(), forCellReuseIdentifier: HourlyCell.identifier)
@@ -59,15 +56,12 @@ class BasicViewController: UIViewController {
     }
     
     private func configButton() {
-        let plusIcon = UIImage(systemName: "location.magnifyingglass")
-        plusIcon?.withTintColor(UIColor.black)
-        
+        let location = UIImage(systemName: "location.magnifyingglass")
+        location?.withTintColor(UIColor.black)
         view.addSubview(buttonShowSearch)
-        
-        buttonShowSearch.setBackgroundImage(plusIcon, for: .normal)
+        buttonShowSearch.setBackgroundImage(location, for: .normal)
         buttonShowSearch.tintColor = UIColor(named: "MainColor")
-        buttonShowSearch.addTarget(self, action: #selector(actionShowSearchScreen), for: .touchUpInside)
-        
+        buttonShowSearch.addTarget(self, action: #selector(showSearch), for: .touchUpInside)
         buttonShowSearch.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
             make.size.equalTo(25)
@@ -75,22 +69,21 @@ class BasicViewController: UIViewController {
         }
     }
     
-    private func setBackgroundImage(name: String) {
-                imageView = UIImageView(frame: view.bounds)
-                imageView.contentMode =  .scaleAspectFill
-                imageView.clipsToBounds = true
-                imageView.image = UIImage(named: name)
-                imageView.center = view.center
-                view.addSubview(imageView)
-                self.view.sendSubviewToBack(imageView)
-            }
-        
+    private func createBackgroundImage(name: String) {
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: name)
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
     
-    private func setHourlyCells(cell: WeekCell, indexPath: IndexPath) {
+    private func createHourlyCells(cell: WeekCell, indexPath: IndexPath) {
         let dt = basicEntity?.hourly[indexPath.row ].dt ?? 0
-        let date = dateFormatterService.dateFormater(dt: dt, format: "HH")
+        let dtx = dt + 200.0
+        let date = dateFormatterService.dateFormater(dt: dtx, format: "HH")
         let iconName = basicEntity?.hourly[indexPath.row].weather.first?.icon
-        
         for icons in iconsDic.iconsDic {
             if iconName == icons.key {
                 let icon = UIImage(systemName: icons.value)?.withRenderingMode(.alwaysOriginal)
@@ -101,7 +94,7 @@ class BasicViewController: UIViewController {
         cell.temperature.text = "\(Int(basicEntity?.hourly[indexPath.row].temp ?? 0))°"
     }
     
-    private func setDayOfWeek(indexPath: IndexPath) -> String {
+    private func createDayOfWeek(indexPath: IndexPath) -> String {
         guard let dt = (basicEntity?.daily[indexPath.row - 2].dt) else { return "" }
         let date = dateFormatterService.dateFormater(dt: dt, format: "EEEE")
         return date
@@ -128,8 +121,8 @@ class BasicViewController: UIViewController {
         return maxTemp
     }
     
-    @objc func actionShowSearchScreen() {
-        presenter.showSearchScreen()
+    @objc func showSearch() {
+        presenter.showSearch()
     }
 }
 
@@ -152,7 +145,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.cityName.text = basicEntity?.city
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
-           
+            
             cell.feelsLikeLabel.text = basicEntity?.feelsLike
             return cell
         case 1:
@@ -170,9 +163,9 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyCell.identifier, for: indexPath) as? HourlyCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-           
+            
             cell.setTemp = { [weak self] cell, index in
-                self?.setHourlyCells(cell: cell, indexPath: index)
+                self?.createHourlyCells(cell: cell, indexPath: index)
             }
             cell.collectionView.reloadData()
             return cell
@@ -180,7 +173,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyCell.indetifier, for: indexPath) as? DailyCell else { return UITableViewCell() }
             cell.backgroundColor = UIColor(named: "ParamColor")
             cell.layer.cornerRadius = 25
-            cell.dayOfWeekLabel.text = setDayOfWeek(indexPath: indexPath)
+            cell.dayOfWeekLabel.text = createDayOfWeek(indexPath: indexPath)
             cell.iconImageView.image = setIcon(indexPath: indexPath)
             cell.minTempLabel.text = setMinTemp(indexPath: indexPath)
             cell.maxTempLabel.text = setMaxTemp(indexPath: indexPath)
@@ -192,10 +185,10 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension BasicViewController: BasicPresenterOutput {
     func loadBackground(backgroundName: String) {
-        setBackgroundImage(name: backgroundName)
+        createBackgroundImage(name: backgroundName)
     }
     
-    func setState(with entity: BasicEntity) {
+    func createState(with entity: BasicEntity) {
         basicEntity = entity
         tableView.reloadData()
     }

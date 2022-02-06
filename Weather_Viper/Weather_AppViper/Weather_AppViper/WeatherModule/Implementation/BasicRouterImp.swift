@@ -9,13 +9,13 @@ import UIKit
 import Jelly
 
 final class BasicRouterImp: BasicRouterInput {
+    
     var animator: Jelly.Animator?
     weak var view: UIViewController?
     
-    func showSearchScreen(ouput: ModuleOuput?) {
+    func showSearch(ouput: ModuleOuput?) {
         let uiConfiguration = PresentationUIConfiguration(cornerRadius: 35,
                                                           backgroundStyle: .blurred(effectStyle: .dark), isTapBackgroundToDismissEnabled: true)
-        
         let size = PresentationSize(width: .fullscreen, height: .fullscreen)
         let alignment = PresentationAlignment(vertical: .center, horizontal: .center)
         let marginGuards = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
@@ -31,7 +31,6 @@ final class BasicRouterImp: BasicRouterInput {
         animator = Animator(presentation:presentation)
         guard let view = view, let controller = SearchAssembly.configSearchModule(output: ouput) else { return }
         animator?.prepare(presentedViewController: controller)
-        
         view.present(controller, animated: true, completion: nil)
     }
 }
@@ -44,5 +43,3 @@ final class SearchRouterImp: SearchRouterInput {
         view.dismiss(animated: true)
     }
 }
-
-

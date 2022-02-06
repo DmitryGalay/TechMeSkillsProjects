@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BasicRouterInput {
-    func showSearchScreen(ouput: ModuleOuput?)
+    func showSearch(ouput: ModuleOuput?)
 }
 
 protocol SearchRouterInput {

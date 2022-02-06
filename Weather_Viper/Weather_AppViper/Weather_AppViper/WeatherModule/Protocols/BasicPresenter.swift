@@ -9,11 +9,11 @@ import Foundation
 protocol BasicPresenterInput {
     var view: BasicPresenterOutput? { get set }
     func viewIsReady()
-    func showSearchScreen()
+    func showSearch()
 }
 
 protocol BasicPresenterOutput: AnyObject {
-    func setState(with entity: BasicEntity)
+    func createState(with entity: BasicEntity)
     func loadBackground(backgroundName: String)
 }
 

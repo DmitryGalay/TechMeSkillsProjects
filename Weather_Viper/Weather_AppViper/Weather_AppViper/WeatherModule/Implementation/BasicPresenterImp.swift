@@ -21,8 +21,8 @@ final class BasicPresenterImp: BasicPresenterInput, ModuleInput {
         interactor.checkConnection()
     }
     
-    func showSearchScreen() {
-        router.showSearchScreen(ouput: self)
+    func showSearch() {
+        router.showSearch(ouput: self)
     }
 }
 extension BasicPresenterImp: BasicInteractorOuput {
@@ -31,7 +31,7 @@ extension BasicPresenterImp: BasicInteractorOuput {
     }
     
     func updateEntity(entity: BasicEntity) {
-        view?.setState(with: entity)
+        view?.createState(with: entity)
     }
     
 }

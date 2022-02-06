@@ -8,14 +8,11 @@
 import UIKit
 import CoreLocation
 
-class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
-    
+class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var search: UISearchBar!
-    
     private var city = ""
     var presenter: SearchPresenterInput!
     var delegate: BasicViewController!
-    
     let dataService = DataService()
     
     override func viewDidLoad() {
@@ -33,10 +30,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         search.delegate = self
         search.layer.cornerRadius = 25
     }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         city = searchBar.text ?? ""
