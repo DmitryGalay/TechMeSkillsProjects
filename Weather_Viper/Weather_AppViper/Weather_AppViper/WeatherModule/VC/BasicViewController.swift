@@ -88,7 +88,7 @@ class BasicViewController: UIViewController {
     
     private func setHourlyCells(cell: WeekCell, indexPath: IndexPath) {
         let dt = basicEntity?.hourly[indexPath.row ].dt ?? 0
-        let date = dateFormatterService.dateFormater(dt: dt, format: "HH:mm")
+        let date = dateFormatterService.dateFormater(dt: dt, format: "HH")
         let iconName = basicEntity?.hourly[indexPath.row].weather.first?.icon
         
         for icons in iconsDic.iconsDic {
