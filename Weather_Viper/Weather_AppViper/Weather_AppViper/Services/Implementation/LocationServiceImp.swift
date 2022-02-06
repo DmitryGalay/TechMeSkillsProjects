@@ -7,6 +7,7 @@
 
 import CoreLocation
 final class LocationServiceImp: LocationService {
+     static let shared  = LocationServiceImp()
     var currentCity = ""
 
     func geoCodingCoordinates(currentLocation: CLLocation, completion: @escaping (String, CLLocationDegrees, CLLocationDegrees) -> ()) {

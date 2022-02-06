@@ -6,13 +6,13 @@
 //
 import Foundation
 final class SharedStorageImp: SharedStorage {
-    let storage = UserDefaults.standard
+    static let shared = SharedStorageImp()
     
     func setValue(key: String, value: Data?) {
-        storage.set(value, forKey: key)
+        UserDefaults.standard.set(value, forKey: key)
     }
     
     func getValue(key: String) -> Data {
-        return storage.data(forKey: key) ?? Data()
+        return UserDefaults.standard.data(forKey: key) ?? Data()
     }
 }

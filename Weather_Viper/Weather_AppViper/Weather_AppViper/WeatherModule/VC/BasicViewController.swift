@@ -28,6 +28,7 @@ class BasicViewController: UIViewController {
     private func config() {
         configTableView()
         configButton()
+        createImage()
     }
     
     private func configTableView() {
@@ -69,14 +70,20 @@ class BasicViewController: UIViewController {
         }
     }
     
-    private func createBackgroundImage(name: String) {
+    private func createImage() {
         imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: name)
         imageView.center = view.center
+        imageView.image = UIImage(named: "sun")
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+    }
+    
+    private func createBackgroundImage(name: String) {
+       
+        imageView.image = UIImage(named: name)
+        
     }
     
     private func createHourlyCells(cell: WeekCell, indexPath: IndexPath) {
@@ -186,6 +193,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 extension BasicViewController: BasicPresenterOutput {
     func loadBackground(backgroundName: String) {
         createBackgroundImage(name: backgroundName)
+        imageView.image = UIImage(named: backgroundName)
     }
     
     func createState(with entity: BasicEntity) {

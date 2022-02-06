@@ -53,8 +53,9 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         if !entity.city.isEmpty {
             saveEntity(entity: entity)
             output?.updateEntity(entity: entity)
-            output?.updateBackgroud(name: backgroudService.backgroudBasic(entity: entity))
-            
+            DispatchQueue.main.async {
+                self.output?.updateBackgroud(name: self.backgroudService.backgroudBasic(entity: entity))
+            }
         }
     }
     
