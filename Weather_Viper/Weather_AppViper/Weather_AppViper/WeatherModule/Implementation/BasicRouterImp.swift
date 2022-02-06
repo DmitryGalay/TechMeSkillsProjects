@@ -1,5 +1,5 @@
 //
-//  WeatherRouterImp.swift
+//  BasicRouterImp.swift
 //  Weather_AppViper
 //
 //  Created by Dima on 26.01.22.
@@ -33,7 +33,15 @@ final class BasicRouterImp: BasicRouterInput {
         animator?.prepare(presentedViewController: controller)
         
         view.present(controller, animated: true, completion: nil)
-        //view.present(controller, animated: true)
+    }
+}
+
+final class SearchRouterImp: SearchRouterInput {
+    weak var view: UIViewController?
+    
+    func dismissSearch(output: ModuleOuput?) {
+        guard let view = view else { return }
+        view.dismiss(animated: true)
     }
 }
 

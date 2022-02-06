@@ -16,3 +16,13 @@ protocol BasicPresenterOutput: AnyObject {
     func setState(with entity: BasicEntity)
     func loadBackground(backgroundName: String)
 }
+
+protocol SearchPresenterInput {
+    var view: SearchPresenterOuput? { get set }
+    func didChooseCity(city: String)
+    func dismissSearch()
+}
+
+protocol SearchPresenterOuput: AnyObject {
+}
+

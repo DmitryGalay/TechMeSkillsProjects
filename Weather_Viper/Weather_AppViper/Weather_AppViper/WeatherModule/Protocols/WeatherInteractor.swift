@@ -18,3 +18,12 @@ protocol BasicInteractorOuput: AnyObject {
     func updateEntity(entity: BasicEntity)
     func updateBackgroud(name: String)
 }
+
+protocol SearchInteractorInput {
+    var output: SearchInteractorOuput? { get set }
+    func didChooseCityFromSearch(city: String)
+}
+
+protocol SearchInteractorOuput: AnyObject {
+    func updateModel(with model: WeatherModel)
+}

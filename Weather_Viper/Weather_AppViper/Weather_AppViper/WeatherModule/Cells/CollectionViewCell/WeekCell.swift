@@ -12,7 +12,6 @@ class WeekCell: UICollectionViewCell {
  
     static let identifier = "WeekCell"
     
-    var blurEffectView = UIVisualEffectView()
     
     let hours: UILabel = {
         let textLabel = UILabel()
@@ -34,14 +33,6 @@ class WeekCell: UICollectionViewCell {
         textLabel.textColor = UIColor(named: "MainColor")
         textLabel.textAlignment = .center
         return textLabel
-    }()
-    
-    var slashLabel: UILabel = {
-        let text = UILabel()
-        text.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        text.textAlignment = .center
-        text.textColor = .white
-        return text
     }()
 
     override func prepareForReuse() {

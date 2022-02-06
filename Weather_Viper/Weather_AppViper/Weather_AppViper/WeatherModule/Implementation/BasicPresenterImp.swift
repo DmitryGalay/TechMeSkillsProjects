@@ -1,5 +1,5 @@
 //
-//  WeatherPresenterImp.swift
+//  BasicPresenterImp.swift
 //  Weather_AppViper
 //
 //  Created by Dima on 26.01.22.
@@ -38,5 +38,33 @@ extension BasicPresenterImp: BasicInteractorOuput {
 extension BasicPresenterImp: ModuleOuput {
     func didUpdateModel(model: WeatherModel) {
         interactor.loadWeatherForecast(with: model)
+    }
+}
+
+final class SearchPresenterImp: SearchPresenterInput {
+
+    weak var view: SearchPresenterOuput?
+    var interactor: SearchInteractorInput!
+    var router: SearchRouterInput!
+    weak var output: ModuleOuput?
+
+    func didChooseCity(city: String) {
+        interactor.didChooseCityFromSearch(city: city)
+        
+    }
+    func dismissSearch() {
+        router.dismissSearch(output: self)
+    }
+}
+
+extension SearchPresenterImp: SearchInteractorOuput {
+    
+    func updateModel(with model: WeatherModel) {
+        output?.didUpdateModel(model: model)
+    }
+
+}
+extension SearchPresenterImp: ModuleOuput {
+    func didUpdateModel(model: WeatherModel) {
     }
 }

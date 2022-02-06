@@ -87,8 +87,8 @@ class BasicViewController: UIViewController {
         
     
     private func setHourlyCells(cell: WeekCell, indexPath: IndexPath) {
-        let dt = basicEntity?.hourly[indexPath.row].dt ?? 0
-        let date = dateFormatterService.dateFormater(dt: dt, format: "HH")
+        let dt = basicEntity?.hourly[indexPath.row ].dt ?? 0
+        let date = dateFormatterService.dateFormater(dt: dt, format: "HH:mm")
         let iconName = basicEntity?.hourly[indexPath.row].weather.first?.icon
         
         for icons in iconsDic.iconsDic {
@@ -178,7 +178,6 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyCell.indetifier, for: indexPath) as? DailyCell else { return UITableViewCell() }
-//            cell.backgroundColor = .clear
             cell.backgroundColor = UIColor(named: "ParamColor")
             cell.layer.cornerRadius = 25
             cell.dayOfWeekLabel.text = setDayOfWeek(indexPath: indexPath)

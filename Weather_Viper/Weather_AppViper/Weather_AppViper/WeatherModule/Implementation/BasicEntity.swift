@@ -1,5 +1,5 @@
 //
-//  WeatherEntity.swift
+//  BasicEntity.swift
 //  Weather_AppViper
 //
 //  Created by Dima on 26.01.22.

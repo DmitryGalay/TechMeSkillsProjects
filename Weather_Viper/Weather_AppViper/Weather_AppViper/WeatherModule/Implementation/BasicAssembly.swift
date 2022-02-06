@@ -1,5 +1,5 @@
 //
-//  WeatherAssembly.swift
+//  BasicAssembly.swift
 //  Weather_AppViper
 //
 //  Created by Dima on 26.01.22.
@@ -41,6 +41,31 @@ class BasicAssembly {
        
         
         controller.dateFormatterService = dateFormatterService
+        
+        controller.presenter = presenter
+        router.view = controller
+        
+        return controller
+    }
+}
+
+class SearchAssembly {
+    static func configSearchModule(output: ModuleOuput?) -> UIViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return nil }
+        
+        let presenter = SearchPresenterImp()
+        let interactor = SearchInteractorImp()
+        let router = SearchRouterImp()
+        
+        let locationService = LocationServiceImp()
+        
+        presenter.interactor = interactor
+        presenter.router = router
+        presenter.output = output
+        
+        interactor.output = presenter
+        interactor.locationService = locationService
         
         controller.presenter = presenter
         router.view = controller
