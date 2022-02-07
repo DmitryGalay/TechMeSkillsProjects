@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "rain-316579_1280.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "rain@2x.jpg",
+      "filename" : "rain-316579_1280@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "rain@3x.jpg",
+      "filename" : "rain-316579_1280@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
