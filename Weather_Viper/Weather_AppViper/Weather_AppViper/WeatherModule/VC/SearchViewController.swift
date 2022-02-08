@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var search: UISearchBar!
@@ -30,8 +31,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         search.delegate = self
         search.layer.cornerRadius = 25
     }
+    
+    private func configSVProgress() {
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.show(withStatus: "loading..", maskType: .black)
+    }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        configSVProgress()
         searchBar.resignFirstResponder()
         city = searchBar.text ?? ""
         presenter.didChooseCity(city: city)

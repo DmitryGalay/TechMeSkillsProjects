@@ -7,6 +7,7 @@
 import UIKit
 import SnapKit
 import Jelly
+import SVProgressHUD
 
 class BasicViewController: UIViewController {
     var timer = Timer()
@@ -173,7 +174,6 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.humidityLabel.text = basicEntity?.humidity
             cell.windDegLabel.text = basicEntity?.wind_deg
             cell.windLabel.text = basicEntity?.wind
-            
             cell.pressureLabel.text = basicEntity?.pressure
             cell.visibilityLabel.text = basicEntity?.visibility
             cell.sunriseLabel.text = basicEntity?.sunrise
@@ -203,8 +203,10 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BasicViewController: BasicPresenterOutput {
+    
     func loadBackground(backgroundName: String) {
         createBackgroundImage(name: backgroundName)
+        SVProgressHUD.dismiss()
     }
     
     func createState(with entity: BasicEntity) {

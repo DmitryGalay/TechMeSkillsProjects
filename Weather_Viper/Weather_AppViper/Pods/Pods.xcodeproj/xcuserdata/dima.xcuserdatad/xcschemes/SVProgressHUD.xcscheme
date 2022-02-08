@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7F9119A842E66F127E010A97169E4F4"
-               BuildableName = "SwiftGifOrigin.framework"
-               BlueprintName = "SwiftGifOrigin"
+               BlueprintIdentifier = "1C8D67D8B72D6BA42CCEDB648537A340"
+               BuildableName = "SVProgressHUD.framework"
+               BlueprintName = "SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

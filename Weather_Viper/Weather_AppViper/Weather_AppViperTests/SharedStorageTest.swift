@@ -9,7 +9,6 @@ import XCTest
 @testable import Weather_AppViper
 
 class SharedStorageTest: XCTestCase {
-
     let service = SharedStorageImp.shared
     
     func testShared() {
