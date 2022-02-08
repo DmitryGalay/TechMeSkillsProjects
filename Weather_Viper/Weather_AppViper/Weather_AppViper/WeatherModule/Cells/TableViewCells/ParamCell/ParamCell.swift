@@ -216,7 +216,7 @@ class ParamCell: UITableViewCell {
         containerView.addSubview(visibilityLabel)
         containerView.addSubview(visibilityIcon)
         visibilityLabel.snp.makeConstraints { make in
-            make.right.equalTo(-contentView.center.x / 8)
+            make.left.equalTo(sunriseLabel.snp.right).offset(70)
             make.top.equalToSuperview().inset(15)
         }
         visibilityIcon.snp.makeConstraints { make in
@@ -231,7 +231,7 @@ class ParamCell: UITableViewCell {
         containerView.addSubview(pressureLabel)
         containerView.addSubview(pressureIcon)
         pressureLabel.snp.makeConstraints { make in
-            make.right.equalTo(sunsetLabel.snp.right).offset(140)
+            make.left.equalTo(sunriseLabel.snp.right).offset(70)
             make.top.equalTo(visibilityLabel.snp.bottom).offset(15)
             make.bottom.equalToSuperview().inset(15)
         }
