@@ -53,13 +53,13 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         if !entity.city.isEmpty {
             saveEntity(entity: entity)
             output?.updateEntity(entity: entity)
-            DispatchQueue.main.async {
+//            DispatchQueue.main.async {
                 self.output?.updateBackgroud(name: self.backgroudService.backgroudBasic(entity: entity))
-            }
+//            }
         }
     }
     
-    func loadWeatherForecast(with model: WeatherModel) {
+    func loadWeather( _ model: WeatherModel) {
         weatherService.loadWeatherData(lat: model.lat, long: model.long) { [weak self] mapped in
             self?.configEntity(with: mapped, model: model)
         }
@@ -92,7 +92,7 @@ extension BasicInteractorImp: CLLocationManagerDelegate {
             self.locationManager.stopUpdatingLocation()
             locationService.geoCodingCoordinates(currentLocation: currentLocation) { [weak self] city, lat, long in
                 let newModel = WeatherModel(city: city, lat: lat, long: long)
-                self?.loadWeatherForecast(with: newModel)
+                self?.loadWeather(newModel)
                 self?.isConnected = true
             }
         }

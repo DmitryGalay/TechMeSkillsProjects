@@ -42,7 +42,7 @@ class BasicViewController: UIViewController {
         view.addSubview(tableView)
         addTableCell()
         tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(80)
+            make.top.equalToSuperview().offset(100)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
@@ -75,15 +75,13 @@ class BasicViewController: UIViewController {
         imageView.contentMode =  .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.center = view.center
-        imageView.image = UIImage(named: "sun")
+        imageView.image = UIImage(named: "broken clouds")
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
     }
     
     private func createBackgroundImage(name: String) {
-       
         imageView.image = UIImage(named: name)
-        
     }
     
     private func createHourlyCells(cell: WeekCell, indexPath: IndexPath) {
@@ -102,7 +100,7 @@ class BasicViewController: UIViewController {
     }
     
     private func createDayOfWeek(indexPath: IndexPath) -> String {
-        guard let dt = (basicEntity?.daily[indexPath.row - 2].dt) else { return "" }
+        guard let dt = (basicEntity?.daily[indexPath.row - 1].dt) else { return "" }
         let date = dateFormatterService.dateFormater(dt: dt, format: "EEEE")
         return date
     }
@@ -136,7 +134,7 @@ class BasicViewController: UIViewController {
 extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = basicEntity?.daily.count ?? 0
-        return count + 2
+        return count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -144,7 +142,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrentCell.identifier, for: indexPath) as? CurrentCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            guard let forecast = basicEntity?.daily else { return UITableViewCell() }
+            guard let forecast = basicEntity?.hourly else { return UITableViewCell() }
             let daily = forecast[indexPath.row]
             let icon = daily.weather[0].icon
             guard let unwrapIcon = iconsDic.iconsDic[icon] else { return UITableViewCell() }
@@ -152,7 +150,6 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.cityName.text = basicEntity?.city
             cell.temperatureLabel.text = basicEntity?.temp
             cell.descriptionWeather.text = basicEntity?.descript
-            
             cell.feelsLikeLabel.text = basicEntity?.feelsLike
             return cell
         case 1:
@@ -162,6 +159,7 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
             cell.humidityLabel.text = basicEntity?.humidity
             cell.windDegLabel.text = basicEntity?.wind_deg
             cell.windLabel.text = basicEntity?.wind
+            
             cell.pressureLabel.text = basicEntity?.pressure
             cell.visibilityLabel.text = basicEntity?.visibility
             cell.sunriseLabel.text = basicEntity?.sunrise
@@ -193,7 +191,6 @@ extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
 extension BasicViewController: BasicPresenterOutput {
     func loadBackground(backgroundName: String) {
         createBackgroundImage(name: backgroundName)
-        imageView.image = UIImage(named: backgroundName)
     }
     
     func createState(with entity: BasicEntity) {

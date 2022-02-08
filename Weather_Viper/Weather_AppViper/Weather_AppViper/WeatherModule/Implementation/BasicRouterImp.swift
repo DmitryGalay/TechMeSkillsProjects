@@ -22,7 +22,6 @@ final class BasicRouterImp: BasicRouterInput {
         let timing = PresentationTiming(duration: .slow, presentationCurve: .linear, dismissCurve: .linear)
         let presentation = CoverPresentation(directionShow: .top,
                                              directionDismiss: .top,
-                                             
                                              uiConfiguration: uiConfiguration, size: size,
                                              alignment: alignment,
                                              marginGuards: marginGuards,

@@ -11,7 +11,7 @@ protocol BasicInteractorInput {
     var output: BasicInteractorOuput? { get set }
     func locationAccess()
     func checkConnection()
-    func loadWeatherForecast(with model: WeatherModel)
+    func loadWeather(_ model: WeatherModel)
 }
 
 protocol BasicInteractorOuput: AnyObject {

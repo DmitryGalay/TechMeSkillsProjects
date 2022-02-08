@@ -10,13 +10,10 @@ import UIKit
 import CoreLocation
 
 class HourlyCell: UITableViewCell {
-    
     static let identifier = "HourlyCell"
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-                    
     var setTemp: ((WeekCell, IndexPath)->())?
-    
+    @IBOutlet weak var collectionView: UICollectionView!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         configCollectionView()
@@ -46,9 +43,7 @@ extension HourlyCell: UICollectionViewDataSource {
         cell.configCell()
         cell.backgroundColor = UIColor(named: "ParamColor")
         cell.layer.cornerRadius = 25
-//        cell.backgroundColor = .clear
         setTemp?(cell, indexPath)
-        
         return cell
     }
 }

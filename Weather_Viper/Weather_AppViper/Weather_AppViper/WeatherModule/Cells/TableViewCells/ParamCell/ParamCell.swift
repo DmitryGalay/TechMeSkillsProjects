@@ -11,6 +11,7 @@ import SnapKit
 class ParamCell: UITableViewCell {
     
     static let identifier = "ParamCell"
+    var isValue: Bool = false
     
     var containerView: UIView = {
         let view = UIView()
@@ -158,6 +159,9 @@ class ParamCell: UITableViewCell {
             make.height.equalTo(humidityLabel.snp.height)
             make.width.equalTo(humidityIcon.snp.height)
         }
+        if isValue {
+            humidityIcon.isHidden = true
+        }
     }
     
     private func configWind() {
@@ -181,6 +185,9 @@ class ParamCell: UITableViewCell {
             make.height.equalTo(windLabel.snp.height)
             make.width.equalTo(windIcon.snp.height)
         }
+//        if !isValue {
+//            windIcon.isHidden = true
+//        }
     }
     
     private func configSunrise() {

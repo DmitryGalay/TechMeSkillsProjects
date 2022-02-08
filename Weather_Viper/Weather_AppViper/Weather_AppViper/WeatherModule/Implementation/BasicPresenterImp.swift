@@ -37,7 +37,7 @@ extension BasicPresenterImp: BasicInteractorOuput {
 }
 extension BasicPresenterImp: ModuleOuput {
     func didUpdateModel(model: WeatherModel) {
-        interactor.loadWeatherForecast(with: model)
+        interactor.loadWeather(model)
     }
 }
 
