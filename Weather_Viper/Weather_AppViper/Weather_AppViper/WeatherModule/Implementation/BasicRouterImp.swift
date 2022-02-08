@@ -3,13 +3,11 @@
 //  Weather_AppViper
 //
 //  Created by Dima on 26.01.22.
-//
 
 import UIKit
 import Jelly
 
 final class BasicRouterImp: BasicRouterInput {
-    
     var animator: Jelly.Animator?
     weak var view: UIViewController?
     

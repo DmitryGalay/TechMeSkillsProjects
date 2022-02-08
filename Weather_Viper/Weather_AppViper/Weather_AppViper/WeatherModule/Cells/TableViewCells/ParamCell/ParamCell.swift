@@ -9,9 +9,7 @@ import Foundation
 import SnapKit
 
 class ParamCell: UITableViewCell {
-    
     static let identifier = "ParamCell"
-    var isValue: Bool = false
     
     var containerView: UIView = {
         let view = UIView()
@@ -143,7 +141,6 @@ class ParamCell: UITableViewCell {
             make.top.bottom.equalToSuperview()
         }
         containerView.backgroundColor = .clear
-        
     }
     
     private func configHumidity() {
@@ -158,9 +155,6 @@ class ParamCell: UITableViewCell {
             make.bottom.equalTo(humidityLabel.snp.bottom)
             make.height.equalTo(humidityLabel.snp.height)
             make.width.equalTo(humidityIcon.snp.height)
-        }
-        if isValue {
-            humidityIcon.isHidden = true
         }
     }
     
@@ -185,9 +179,6 @@ class ParamCell: UITableViewCell {
             make.height.equalTo(windLabel.snp.height)
             make.width.equalTo(windIcon.snp.height)
         }
-//        if !isValue {
-//            windIcon.isHidden = true
-//        }
     }
     
     private func configSunrise() {

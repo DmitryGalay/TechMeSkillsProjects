@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol ModuleInput {
     var model: WeatherModel? { get set }
 }

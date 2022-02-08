@@ -6,10 +6,11 @@
 //
 
 import CoreLocation
-final class LocationServiceImp: LocationService {
-     static let shared  = LocationServiceImp()
-    var currentCity = ""
 
+final class LocationServiceImp: LocationService {
+    static let shared  = LocationServiceImp()
+    var currentCity = ""
+    
     func geoCodingCoordinates(currentLocation: CLLocation, completion: @escaping (String, CLLocationDegrees, CLLocationDegrees) -> ()) {
         let lat = currentLocation.coordinate.latitude
         let long = currentLocation.coordinate.longitude
@@ -26,6 +27,7 @@ final class LocationServiceImp: LocationService {
             }
         }
     }
+    
     func geoCodingAddress(city: String, completion: @escaping (CLLocation) -> ()) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(city) { coordinate, error in

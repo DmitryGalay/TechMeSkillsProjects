@@ -4,6 +4,7 @@
 //
 //  Created by Dima on 29.01.22.
 //
+
 struct Current: Codable {
     let sunrise: Float
     let sunset: Float
@@ -16,5 +17,3 @@ struct Current: Codable {
     let pressure: Float
     let weather: [Weather]
 }
-
-

@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 protocol SharedStorage {
     func setValue(key: String, value: Data?)
+    
     func getValue(key: String) -> Data
 }

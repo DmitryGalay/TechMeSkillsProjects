@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class CurrentCell: UITableViewCell {
-    
     static let identifier = "CurrentCell"
     
     var containerView: UIView = {
@@ -127,7 +126,7 @@ class CurrentCell: UITableViewCell {
             make.bottom.equalToSuperview().inset(15)
         }
     }
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "CurrentCell", bundle: nil)
     }

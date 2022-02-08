@@ -38,5 +38,3 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         presenter.dismissSearch()
     }
 }
-
-

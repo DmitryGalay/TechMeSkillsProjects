@@ -7,34 +7,41 @@
 
 import Foundation
 
-
 extension Current {
     var currentTemp: String{
         return"\(Int(temp))˚"
     }
+    
     var currentWindSpeed: String {
         return" : \(Int(wind_speed))m/s"
     }
+    
     var currentHumidity: String {
         return" : \(Int(humidity))%"
     }
+    
     var currentWindDeg: String {
         let direction = Direction(wind_deg)
-              return direction.rawValue
+        return direction.rawValue
     }
+    
     var currentFeelLike: String {
         return"Feels like: \(Int(feels_like))°"
     }
+    
     var currentVisibility: String {
         return" : \(Int(visibility) / 1000)km"
     }
+    
     var currentPressure: String {
         let newPress = String(format: "%.1f", (pressure) / 1000)
         return" : \(newPress)kPa"
     }
+    
     var weatherIcon: String {
         return weather.first?.icon ?? ""
     }
+    
     var weatherDescr: String {
         return weather.first?.main ?? ""
     }

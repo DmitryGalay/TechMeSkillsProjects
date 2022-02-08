@@ -8,5 +8,4 @@ target 'Weather_AppViper' do
   # Pods for Weather_AppViper
 pod 'SnapKit'
 pod 'Jelly', '~> 2.2.2'
-pod 'SwiftGifOrigin'
 end

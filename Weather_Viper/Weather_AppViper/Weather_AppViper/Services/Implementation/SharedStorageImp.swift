@@ -5,6 +5,7 @@
 //  Created by Dima on 26.01.22.
 //
 import Foundation
+
 final class SharedStorageImp: SharedStorage {
     static let shared = SharedStorageImp()
     

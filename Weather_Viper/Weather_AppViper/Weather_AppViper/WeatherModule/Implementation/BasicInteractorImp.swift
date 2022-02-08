@@ -9,21 +9,15 @@ import CoreLocation
 
 final class BasicInteractorImp: NSObject, BasicInteractorInput {
     weak var output: BasicInteractorOuput?
-    
     var locationService: LocationService!
     var weatherService: WeatherService!
     var storageService: SharedStorage!
     var dateFormatterService: DateFormatterService!
     var backgroudService: BackgroundService!
-    
-    
     var locationManager = CLLocationManager()
     var currentLocation = CLLocation()
-    
     var dataService: DataService?
-    
     var entity: BasicEntity?
-    
     var isConnected = false
     
     func locationAccess() {
@@ -53,9 +47,7 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
         if !entity.city.isEmpty {
             saveEntity(entity: entity)
             output?.updateEntity(entity: entity)
-//            DispatchQueue.main.async {
-                self.output?.updateBackgroud(name: self.backgroudService.backgroudBasic(entity: entity))
-//            }
+            self.output?.updateBackgroud(name: self.backgroudService.backgroudBasic(entity: entity))
         }
     }
     
@@ -75,11 +67,11 @@ final class BasicInteractorImp: NSObject, BasicInteractorInput {
     
     private func saveEntity(entity: BasicEntity) {
         let data = try? JSONEncoder().encode(entity)
-        storageService.setValue(key: StorageKey.keyForWeatherForecast, value: data)
+        storageService.setValue(key: StorageKey.keyForWeather, value: data)
     }
     
     private func getEntity() -> BasicEntity? {
-        let newData = storageService.getValue(key: StorageKey.keyForWeatherForecast)
+        let newData = storageService.getValue(key: StorageKey.keyForWeather)
         let entity = try? JSONDecoder().decode(BasicEntity.self, from: newData)
         return entity
     }
@@ -101,10 +93,8 @@ extension BasicInteractorImp: CLLocationManagerDelegate {
 
 final class SearchInteractorImp: SearchInteractorInput {
     var output: SearchInteractorOuput?
-    
     var locationService: LocationService!
     
-
     func didChooseCityFromSearch(city: String) {
         locationService.geoCodingAddress(city: city) { [weak self] location in
             self?.locationService.geoCodingCoordinates(currentLocation: location) { [weak self] city, lat, long in

@@ -9,11 +9,9 @@ import UIKit
 
 
 class WeekCell: UICollectionViewCell {
- 
     static let identifier = "WeekCell"
     
-    
-    let hours: UILabel = {
+    let timeLabel: UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         textLabel.textColor = UIColor(named: "MainColor")
@@ -27,7 +25,7 @@ class WeekCell: UICollectionViewCell {
         return icon
     }()
     
-    let temperature: UILabel = {
+    let tempLabel: UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont.systemFont(ofSize: 18,weight: .medium)
         textLabel.textColor = UIColor(named: "MainColor")
@@ -37,9 +35,9 @@ class WeekCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        hours.removeFromSuperview()
+        timeLabel.removeFromSuperview()
         iconWeather.removeFromSuperview()
-        temperature.removeFromSuperview()
+        tempLabel.removeFromSuperview()
     }
     
     func configCell() {
@@ -47,26 +45,21 @@ class WeekCell: UICollectionViewCell {
     }
     
     private func configText() {
-        contentView.addSubview(hours)
+        contentView.addSubview(timeLabel)
         contentView.addSubview(iconWeather)
-        contentView.addSubview(temperature)
-        
-        hours.snp.makeConstraints { make in
+        contentView.addSubview(tempLabel)
+        timeLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.bottom.equalTo(iconWeather.snp.top).offset(-10)
         }
-        
         iconWeather.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalTo(25)
             make.height.equalTo(20)
         }
-        
-        temperature.snp.makeConstraints { make in
+        tempLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(iconWeather.snp.bottom).offset(10)
         }
     }
 }
-
-

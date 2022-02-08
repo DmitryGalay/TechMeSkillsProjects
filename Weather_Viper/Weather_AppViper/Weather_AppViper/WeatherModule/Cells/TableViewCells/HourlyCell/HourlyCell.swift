@@ -51,12 +51,12 @@ extension HourlyCell: UICollectionViewDataSource {
 
 extension HourlyCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        10
+        1
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: contentView.frame.width / 4.8, height: collectionView.frame.height - 30)
+        CGSize(width: contentView.frame.width / 5, height: collectionView.frame.height - 50)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        UIEdgeInsets(top: 20, left: 5, bottom: 20, right: 5)
     }
 }

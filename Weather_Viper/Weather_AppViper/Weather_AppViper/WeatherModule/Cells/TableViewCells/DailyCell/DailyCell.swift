@@ -10,8 +10,6 @@ import UIKit
 import SnapKit
 
 class DailyCell: UITableViewCell {
-    
-    
     static let indetifier = "DailyCell"
     
     var containerView: UIView = {
@@ -27,7 +25,6 @@ class DailyCell: UITableViewCell {
         text.textColor = UIColor(named: "MainColor")
         return text
     }()
-    
     
     var minTempLabel: UILabel = {
         let text = UILabel()
@@ -70,7 +67,6 @@ class DailyCell: UITableViewCell {
         configTimeLabel()
         configTemp()
         createWeatherIcon()
-       
     }
     
     private func configСontainerView() {
@@ -80,7 +76,6 @@ class DailyCell: UITableViewCell {
             make.top.bottom.equalToSuperview()
         }
         containerView.backgroundColor = .clear
-        
     }
     
     private func configTimeLabel() {
@@ -91,6 +86,7 @@ class DailyCell: UITableViewCell {
             make.centerY.equalTo(containerView.snp.centerY)
         }
     }
+    
     private func createWeatherIcon() {
         containerView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { make in
@@ -106,17 +102,14 @@ class DailyCell: UITableViewCell {
         containerView.addSubview(slashLabel)
         minTempLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
         maxTempLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
-        
         maxTempLabel.snp.makeConstraints { make in
             make.centerY.equalTo(containerView.snp.centerY)
             make.right.equalToSuperview().offset(-70)
         }
-        
         slashLabel.snp.makeConstraints { make in
             make.centerY.equalTo(containerView.snp.centerY)
             make.right.equalToSuperview().offset(-50)
         }
-        
         minTempLabel.snp.makeConstraints { make in
             make.centerY.equalTo(containerView.snp.centerY)
             make.right.equalToSuperview().offset(-10)
@@ -126,9 +119,4 @@ class DailyCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "DailyCell", bundle: nil)
     }
-
-    
 }
-    
-
-

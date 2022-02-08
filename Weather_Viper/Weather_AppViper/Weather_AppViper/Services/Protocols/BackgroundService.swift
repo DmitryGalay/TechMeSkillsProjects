@@ -6,8 +6,9 @@
 //
 
 import Foundation
+
 protocol BackgroundService {
-    
     func backgroudBasic(entity: BasicEntity) -> String
+    
     func backgroudSearch(with mapped: WeatherResponse) -> String
 }

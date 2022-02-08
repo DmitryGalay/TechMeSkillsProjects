@@ -31,6 +31,8 @@ class BasicViewController: UIViewController {
         createImage()
     }
     
+    // MARK: Create and adding tableview
+    
     private func configTableView() {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
@@ -49,12 +51,16 @@ class BasicViewController: UIViewController {
         }
     }
     
+    // MARK: Adding cells for tableview
+    
     private func addTableCell() {
         tableView.register(CurrentCell.nib(), forCellReuseIdentifier: CurrentCell.identifier)
         tableView.register(ParamCell.nib(), forCellReuseIdentifier: ParamCell.identifier)
         tableView.register(HourlyCell.nib(), forCellReuseIdentifier: HourlyCell.identifier)
         tableView.register(DailyCell.nib(), forCellReuseIdentifier: DailyCell.indetifier)
     }
+    
+    // MARK: Create and adding SearchButton
     
     private func configButton() {
         let location = UIImage(systemName: "location.magnifyingglass")
@@ -65,10 +71,12 @@ class BasicViewController: UIViewController {
         buttonShowSearch.addTarget(self, action: #selector(showSearch), for: .touchUpInside)
         buttonShowSearch.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
-            make.size.equalTo(25)
-            make.right.equalToSuperview().inset(35)
+            make.size.equalTo(30)
+            make.right.equalToSuperview().inset(30)
         }
     }
+    
+    // MARK: Adding background image
     
     private func createImage() {
         imageView = UIImageView(frame: view.bounds)
@@ -84,6 +92,8 @@ class BasicViewController: UIViewController {
         imageView.image = UIImage(named: name)
     }
     
+    // MARK: Settings for Hourly Cells
+    
     private func createHourlyCells(cell: WeekCell, indexPath: IndexPath) {
         let dt = basicEntity?.hourly[indexPath.row ].dt ?? 0
         let dtx = dt + 200.0
@@ -95,15 +105,17 @@ class BasicViewController: UIViewController {
                 cell.iconWeather.image = icon
             }
         }
-        cell.hours.text = date
-        cell.temperature.text = "\(Int(basicEntity?.hourly[indexPath.row].temp ?? 0))°"
+        cell.timeLabel.text = date
+        cell.tempLabel.text = "\(Int(basicEntity?.hourly[indexPath.row].temp ?? 0))°"
     }
+    // MARK: Update Days format
     
     private func createDayOfWeek(indexPath: IndexPath) -> String {
         guard let dt = (basicEntity?.daily[indexPath.row - 1].dt) else { return "" }
         let date = dateFormatterService.dateFormater(dt: dt, format: "EEEE")
         return date
     }
+    // MARK: Settings for icon
     
     private func setIcon(indexPath: IndexPath) -> UIImage? {
         let iconName = basicEntity?.daily[indexPath.row - 2].weather[0].icon
@@ -115,6 +127,7 @@ class BasicViewController: UIViewController {
         }
         return UIImage(named: "")
     }
+    // MARK: Settings for temp
     
     private func setMinTemp(indexPath: IndexPath) -> String {
         let minTemp = "\(Int(basicEntity?.daily[indexPath.row - 2].temp.min ?? 0))°"
@@ -130,6 +143,7 @@ class BasicViewController: UIViewController {
         presenter.showSearch()
     }
 }
+// MARK: Updating tableview data
 
 extension BasicViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

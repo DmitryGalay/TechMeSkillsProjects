@@ -13,7 +13,7 @@ enum Constants {
 }
 
 enum StorageKey {
-    static let keyForWeatherForecast = "keyForWeatherForecast"
+    static let keyForWeather = "keyForWeather"
     static let keyForLocation = "keyForLocation"
 }
 
