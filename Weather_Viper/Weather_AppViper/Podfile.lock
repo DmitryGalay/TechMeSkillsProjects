@@ -1,0 +1,24 @@
+PODS:
+  - Jelly (2.2.2)
+  - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Jelly (~> 2.2.2)
+  - SnapKit
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Jelly
+    - SnapKit
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Jelly: 0576a8fd3b3bea78f6c2d952acdc30b0835dda71
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 5b265d0a725e2fa53931653351bf3696ddbb4570
+
+COCOAPODS: 1.11.2
